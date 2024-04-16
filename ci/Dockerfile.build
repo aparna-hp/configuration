@@ -1,0 +1,14 @@
+##
+## Builds collection-service
+##
+
+FROM amazoncorretto:17.0.8-alpine3.18 AS build
+
+ENV http_proxy=http://proxy-wsa.esl.cisco.com:80
+ENV https_proxy=http://proxy-wsa.esl.cisco.com:80
+ENV ftp_proxy=http://proxy-wsa.esl.cisco.com:80
+ENV no_proxy="localhost,.cisco.com,172.29.104.,172.29.105.,172.28.186.,10.,2001:420:28f:2010::/60"
+#RUN apk update && apk add --no-cache gradle
+
+RUN mkdir -p /ws
+WORKDIR /ws
