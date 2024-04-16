@@ -1,0 +1,10 @@
+[
+  {
+    "api_id": "collection_service",
+    "api_name": "CW Planning Collection Service APIs",
+    "listen_path": "/cp/collection-service/",
+    "strip_listen_path": "true",
+    "target_url": "http://collection-service:8080",
+    "component": "Crosswork Planning"
+  }
+]
