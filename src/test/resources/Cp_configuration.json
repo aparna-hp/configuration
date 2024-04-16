@@ -1,0 +1,1755 @@
+{
+  "snmpGroupDataList": [
+    {
+      "snmpType": "SNMPv3",
+      "securityLevel": "AUTH_PRIV",
+      "username": "test",
+      "authenticationProtocol": "SHA",
+      "authenticationPassword": "test",
+      "encryptionProtocol": "AES",
+      "encryptionPassword": "test",
+      "roCommunity": null,
+      "updateDate": [
+        2023,
+        10,
+        19
+      ],
+      "id": 4,
+      "name": "test"
+    },
+    {
+      "snmpType": "SNMPv3",
+      "securityLevel": "AUTH_PRIV",
+      "username": "a",
+      "authenticationProtocol": "SHA",
+      "authenticationPassword": "a",
+      "encryptionProtocol": "AES",
+      "encryptionPassword": "a",
+      "roCommunity": null,
+      "updateDate": [
+        2023,
+        10,
+        27
+      ],
+      "id": 2,
+      "name": "snmp1"
+    },
+    {
+      "snmpType": "SNMPv2c",
+      "securityLevel": "AUTH_PRIV",
+      "username": "string",
+      "authenticationProtocol": "SHA",
+      "authenticationPassword": "string",
+      "encryptionProtocol": "AES",
+      "encryptionPassword": "string",
+      "roCommunity": "cisco",
+      "updateDate": [
+        2023,
+        11,
+        21
+      ],
+      "id": 5,
+      "name": "snmp-grp"
+    },
+    {
+      "snmpType": "SNMPv2c",
+      "securityLevel": "AUTH_PRIV",
+      "username": "test",
+      "authenticationProtocol": "SHA",
+      "authenticationPassword": "test",
+      "encryptionProtocol": "AES",
+      "encryptionPassword": "test",
+      "roCommunity": "cisco",
+      "updateDate": [
+        2023,
+        12,
+        18
+      ],
+      "id": 3,
+      "name": "Test"
+    }
+  ],
+  "authGroupDataList": [
+    {
+      "updateDate": [
+        2023,
+        10,
+        19
+      ],
+      "id": 8,
+      "name": "Test 2",
+      "loginType": "TELNET",
+      "username": "test",
+      "password": "test",
+      "confirmPassword": "test"
+    },
+    {
+      "updateDate": [
+        2023,
+        11,
+        21
+      ],
+      "id": 10,
+      "name": "auth-grp",
+      "loginType": "TELNET",
+      "username": "string",
+      "password": "string",
+      "confirmPassword": "string"
+    },
+    {
+      "updateDate": [
+        2023,
+        12,
+        1
+      ],
+      "id": 11,
+      "name": "SSH_Auth",
+      "loginType": "SSH",
+      "username": "cisco",
+      "password": "cisco",
+      "confirmPassword": "cisco"
+    },
+    {
+      "updateDate": [
+        2023,
+        12,
+        18
+      ],
+      "id": 9,
+      "name": "test",
+      "loginType": "TELNET",
+      "username": "cisco",
+      "password": "cisco!23",
+      "confirmPassword": "cisco!23"
+    }
+  ],
+  "nodeProfileDataList": [
+    {
+      "updateDate": [
+        2023,
+        12,
+        18
+      ],
+      "id": 14,
+      "name": "node-profile-dup",
+      "defaultAuthGroup": "test",
+      "defaultSnmpGroup": "snmp1",
+      "useNodeListAsIncludeFilter": true,
+      "nodeList": [
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 56
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 60
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 64
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 68
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 72
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 52
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 65
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 53
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 59
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 49
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 63
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 69
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 54
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 58
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 70
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 62
+        },
+        {
+          "nodeIp": "1.2.3.4",
+          "nodeManagementIp": "test",
+          "authGroupName": "Test 2",
+          "snmpGroupName": "snmp1",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 66
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 50
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 55
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 57
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 61
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 51
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 71
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 67
+        }
+      ],
+      "nodeFilter": []
+    },
+    {
+      "updateDate": [
+        2023,
+        11,
+        20
+      ],
+      "id": 11,
+      "name": "test4444",
+      "defaultAuthGroup": "Test 2",
+      "defaultSnmpGroup": "snmp1",
+      "useNodeListAsIncludeFilter": false,
+      "nodeList": [],
+      "nodeFilter": []
+    },
+    {
+      "updateDate": [
+        2023,
+        11,
+        20
+      ],
+      "id": 2,
+      "name": "n1",
+      "defaultAuthGroup": "Test 2",
+      "defaultSnmpGroup": "snmp1",
+      "useNodeListAsIncludeFilter": true,
+      "nodeList": [
+        {
+          "nodeIp": "1.2.3.4",
+          "nodeManagementIp": "",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 2
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 15
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 23
+        },
+        {
+          "nodeIp": "1.2.3.44",
+          "nodeManagementIp": "",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 4
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 43
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 14
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 17
+        },
+        {
+          "nodeIp": "10.20.30.40",
+          "nodeManagementIp": "",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 41
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 38
+        },
+        {
+          "nodeIp": "2.3.4.5",
+          "nodeManagementIp": "",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 3
+        },
+        {
+          "nodeIp": "44.44.44.44",
+          "nodeManagementIp": "",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 12
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 13
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 16
+        }
+      ],
+      "nodeFilter": []
+    },
+    {
+      "updateDate": [
+        2023,
+        11,
+        20
+      ],
+      "id": 3,
+      "name": "asfsaf",
+      "defaultAuthGroup": "admin",
+      "defaultSnmpGroup": "snmp1",
+      "useNodeListAsIncludeFilter": false,
+      "nodeList": [],
+      "nodeFilter": []
+    },
+    {
+      "updateDate": [
+        2023,
+        11,
+        20
+      ],
+      "id": 8,
+      "name": "test",
+      "defaultAuthGroup": "Test 2",
+      "defaultSnmpGroup": "snmp1",
+      "useNodeListAsIncludeFilter": false,
+      "nodeList": [
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 44
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 45
+        }
+      ],
+      "nodeFilter": []
+    },
+    {
+      "updateDate": [
+        2023,
+        11,
+        20
+      ],
+      "id": 9,
+      "name": "sfasf",
+      "defaultAuthGroup": "Test 2",
+      "defaultSnmpGroup": "snmp1",
+      "useNodeListAsIncludeFilter": false,
+      "nodeList": [],
+      "nodeFilter": []
+    },
+    {
+      "updateDate": [
+        2023,
+        11,
+        20
+      ],
+      "id": 7,
+      "name": "node-profile",
+      "defaultAuthGroup": "admin",
+      "defaultSnmpGroup": "snmp1",
+      "useNodeListAsIncludeFilter": true,
+      "nodeList": [
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 20
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 28
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 36
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 39
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 31
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 33
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 37
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 8
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 11
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 30
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 40
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 27
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 34
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 42
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 18
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 21
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 26
+        },
+        {
+          "nodeIp": "1.2.3.4",
+          "nodeManagementIp": "test",
+          "authGroupName": "Test 2",
+          "snmpGroupName": "snmp1",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 10
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 29
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 19
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 22
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 9
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 32
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.10.10.10",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 35
+        }
+      ],
+      "nodeFilter": []
+    },
+    {
+      "updateDate": [
+        2023,
+        12,
+        9
+      ],
+      "id": 15,
+      "name": "EmptyNodeProfile",
+      "defaultAuthGroup": "admin",
+      "defaultSnmpGroup": "snmp1",
+      "useNodeListAsIncludeFilter": true,
+      "nodeList": [
+        {
+          "nodeIp": "3.3.3.3",
+          "nodeManagementIp": "30.30.30.30",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 73
+        },
+        {
+          "nodeIp": "12.1.1.12",
+          "nodeManagementIp": "102.10.10.102",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 74
+        },
+        {
+          "nodeIp": "15.1.1.15",
+          "nodeManagementIp": "105.10.10.105",
+          "authGroupName": null,
+          "snmpGroupName": "snmp1",
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 75
+        },
+        {
+          "nodeIp": "16.1.1.16",
+          "nodeManagementIp": "106.10.10.106",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 76
+        }
+      ],
+      "nodeFilter": []
+    },
+    {
+      "updateDate": [
+        2023,
+        12,
+        18
+      ],
+      "id": 17,
+      "name": "NodeProfile18Dec",
+      "defaultAuthGroup": "test",
+      "defaultSnmpGroup": "Test",
+      "useNodeListAsIncludeFilter": true,
+      "nodeList": [
+        {
+          "nodeIp": "12.1.1.12",
+          "nodeManagementIp": "102.10.10.102",
+          "authGroupName": "test",
+          "snmpGroupName": "Test",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 81
+        },
+        {
+          "nodeIp": "15.1.1.15",
+          "nodeManagementIp": "105.10.10.105",
+          "authGroupName": null,
+          "snmpGroupName": "snmp1",
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 82
+        },
+        {
+          "nodeIp": "3.3.3.3",
+          "nodeManagementIp": "30.30.30.30",
+          "authGroupName": "test",
+          "snmpGroupName": "Test",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 83
+        },
+        {
+          "nodeIp": "16.1.1.16",
+          "nodeManagementIp": "106.10.10.106",
+          "authGroupName": null,
+          "snmpGroupName": null,
+          "snmpGroupMismatch": true,
+          "authGroupMismatch": true,
+          "id": 84
+        }
+      ],
+      "nodeFilter": []
+    }
+  ],
+  "agentDataList": [
+    {
+      "updateDate": [
+        2023,
+        11,
+        15
+      ],
+      "id": 13,
+      "name": "test",
+      "type": "TRAFFIC_POLLER",
+      "params": "{\"networkId\":30}"
+    },
+    {
+      "updateDate": [
+        2023,
+        11,
+        15
+      ],
+      "id": 14,
+      "name": "test_igp_tc",
+      "type": "TRAFFIC_POLLER",
+      "params": "{\"networkId\":39}"
+    },
+    {
+      "updateDate": [
+        2023,
+        10,
+        16
+      ],
+      "id": 8,
+      "name": "qq",
+      "type": "SR_PCE_AGENT",
+      "params": "{\"enabled\":true,\"xtcHostIP\":\"1.2.3.4\",\"xtcRestPort\":8080,\"authenticationType\":\"BASIC\",\"credentials\":\"\",\"batchSize\":1000,\"maxLspHistory\":0,\"keepAliveInterval\":10,\"connectionTimeoutInterval\":60,\"connectionRetryCount\":3,\"keepAliveThreshold\":2,\"netRecorderMode\":\"OFF\",\"eventBufferingEnabled\":true,\"playbackEventsDelay\":0,\"eventsBufferTime\":30,\"poolSize\":1,\"topologyCollection\":\"COLLECTION_AND_SUBSCRIPTION\",\"lspCollection\":\"COLLECTION_AND_SUBSCRIPTION\"}"
+    },
+    {
+      "updateDate": [
+        2023,
+        10,
+        27
+      ],
+      "id": 6,
+      "name": "A11",
+      "type": "SR_PCE_AGENT",
+      "params": "{\"enabled\":true,\"xtcHostIP\":\"1.2.3.4\",\"xtcRestPort\":8080,\"authenticationType\":\"BASIC\",\"credentials\":\"\",\"batchSize\":1000,\"maxLspHistory\":0,\"keepAliveInterval\":10,\"connectionTimeoutInterval\":60,\"connectionRetryCount\":3,\"keepAliveThreshold\":2,\"netRecorderMode\":\"OFF\",\"eventBufferingEnabled\":true,\"playbackEventsDelay\":0,\"eventsBufferTime\":30,\"poolSize\":1,\"topologyCollection\":\"COLLECTION_AND_SUBSCRIPTION\",\"lspCollection\":\"COLLECTION_AND_SUBSCRIPTION\"}"
+    },
+    {
+      "updateDate": [
+        2023,
+        10,
+        27
+      ],
+      "id": 9,
+      "name": "test11",
+      "type": "SR_PCE_AGENT",
+      "params": "{\"enabled\":true,\"xtcHostIP\":\"1.1.1.1\",\"xtcRestPort\":8080,\"authenticationType\":\"BASIC\",\"credentials\":\"\",\"batchSize\":1000,\"maxLspHistory\":0,\"keepAliveInterval\":10,\"connectionTimeoutInterval\":60,\"connectionRetryCount\":3,\"keepAliveThreshold\":2,\"netRecorderMode\":\"OFF\",\"eventBufferingEnabled\":true,\"playbackEventsDelay\":0,\"eventsBufferTime\":30,\"poolSize\":1,\"topologyCollection\":\"COLLECTION_AND_SUBSCRIPTION\",\"lspCollection\":\"COLLECTION_AND_SUBSCRIPTION\"}"
+    },
+    {
+      "updateDate": [
+        2023,
+        11,
+        9
+      ],
+      "id": 7,
+      "name": "agt",
+      "type": "SR_PCE_AGENT",
+      "params": "{\"enabled\":true,\"xtcHostIP\":\"1.2.3.4\",\"xtcRestPort\":8080,\"authenticationType\":\"BASIC\",\"credentials\":\"\",\"batchSize\":1000,\"maxLspHistory\":0,\"keepAliveInterval\":10,\"connectionTimeoutInterval\":60,\"connectionRetryCount\":3,\"keepAliveThreshold\":2,\"netRecorderMode\":\"OFF\",\"eventBufferingEnabled\":true,\"playbackEventsDelay\":0,\"eventsBufferTime\":30,\"poolSize\":1,\"topologyCollection\":\"COLLECTION_AND_SUBSCRIPTION\",\"lspCollection\":\"COLLECTION_AND_SUBSCRIPTION\"}"
+    },
+    {
+      "updateDate": [
+        2023,
+        11,
+        16
+      ],
+      "id": 11,
+      "name": "test567",
+      "type": "TRAFFIC_POLLER",
+      "params": "{\"networkId\":41}"
+    }
+  ],
+  "networkDataList": [
+    {
+      "nodeProfileData": {
+        "updateDate": null,
+        "id": 2,
+        "name": "n1",
+        "useNodeListAsIncludeFilter": false
+      },
+      "id": 18,
+      "name": "DemandTest",
+      "draft": false,
+      "draftConfig": "",
+      "collectors": [
+        {
+          "id": 66,
+          "name": "IGP-DemandTest",
+          "type": "TOPO_IGP",
+          "consolidationType": "DARE",
+          "params": "{\"igpConfigs\":[{\"igpIndex\":1,\"seedRouter\":null,\"igpProtocol\":\"ISIS\",\"advanced\":{\"backupRouter\":null,\"getSegment\":false,\"isisLevel\":\"2\",\"ospfArea\":\"0\",\"ospfProcessIds\":[],\"isisProcessIds\":[],\"removeNullProcessId\":false,\"runIGPOffline\":\"OFF\",\"nodeTag\":null,\"loginConfig\":{\"forceLoginPlatform\":null,\"fallbackLoginPlatform\":null,\"sendEnablePassword\":false,\"telnetUserName\":null,\"telnetPassword\":null},\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}],\"collectInterfaces\":true,\"advanced\":{\"nodes\":{\"qosNodeFilterList\":[],\"performanceData\":false,\"removeNodeSuffix\":[],\"discoverQosQueue\":true,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}},\"interfaces\":{\"findParallelLinks\":false,\"ipGuessing\":\"SAFE\",\"discoverLags\":false,\"lagPortMatch\":\"GUESS\",\"circuitCleanup\":false,\"copyDescription\":false,\"collectPhysicalPort\":false,\"minIPGuessPrefixLength\":0,\"minPrefixLength\":30,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}}",
+          "sourceCollector": null,
+          "agents": []
+        },
+        {
+          "id": 87,
+          "name": "Demand-Deduction-DemandTest",
+          "type": "TRAFFIC_DEMAND",
+          "consolidationType": "SAGE",
+          "params": "{\"demandSteps\":[{\"id\":85,\"name\":\"1\",\"stepNumber\":1,\"tool\":{\"dmd-mesh-creator\":{\"bothDirections\":true,\"deleteSameName\":true,\"serviceClass\":null,\"topology\":null,\"advanced\":{\"sourceList\":[],\"sourceNodes\":null,\"sourceSites\":null,\"sourceAs\":null,\"sourceEndpoints\":null,\"destNodes\":null,\"destSites\":null,\"destAs\":null,\"destEndpoints\":null,\"demandmesh-table\":null,\"demandmeshTable\":null,\"outDemandmeshTable\":null,\"outDemandsTable\":null,\"externalAsInterface-endpoints\":true,\"externalAsInterfaceEndpoints\":true,\"respectAsRelationships\":true,\"externalMesh\":\"RESPECT\",\"setName\":null,\"setTagList\":null,\"optionsFile\":null,\"noGlobalOptions\":false,\"destEqualSource\":false,\"destList\":[],\"destination\":\"\",\"includeDemandToSelf\":true,\"suppressProgress\":false,\"debug\":{\"verbosity\":30}}}},\"enabled\":true},{\"id\":86,\"name\":\"2\",\"stepNumber\":2,\"tool\":{\"copy-demands\":{\"sourceCollector\":null}},\"enabled\":true}]}",
+          "sourceCollector": {
+            "id": 0,
+            "name": "DARE",
+            "type": "DARE"
+          },
+          "agents": []
+        }
+      ]
+    },
+    {
+      "nodeProfileData": {
+        "updateDate": null,
+        "id": 11,
+        "name": "test4444",
+        "useNodeListAsIncludeFilter": false
+      },
+      "id": 14,
+      "name": "test",
+      "draft": false,
+      "draftConfig": "",
+      "collectors": [
+        {
+          "id": 24,
+          "name": "Multicast-test",
+          "type": "MULTICAST",
+          "consolidationType": "DARE",
+          "params": "{\"snmpFindMulticastCollector\":{\"id\":20,\"timeout\":30,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}},\"snmpPollMulticastCollector\":{\"id\":21,\"timeout\":30,\"noOfSamples\":1,\"pollingInterval\":300,\"trafficLevelName\":\"Default\",\"trafficFiltering\":\"max\",\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}},\"loginPollMulticastCollector\":{\"id\":23,\"timeout\":30,\"noOfSamples\":1,\"pollingInterval\":300,\"trafficLevelName\":\"Default\",\"trafficFiltering\":\"max\",\"directory\":null,\"saveConfigs\":false,\"debug\":{\"loginRecordMode\":\"OFF\",\"verbosity\":30}},\"loginFindMulticastCollector\":{\"id\":22,\"timeout\":30,\"forceConfigUpdate\":true,\"directory\":null,\"saveConfigs\":false,\"overwriteFiles\":false,\"debug\":{\"loginRecordMode\":\"OFF\",\"verbosity\":30}}}",
+          "sourceCollector": {
+            "id": 18,
+            "name": "IGP-test",
+            "type": "TOPO_IGP"
+          },
+          "agents": []
+        },
+        {
+          "id": 37,
+          "name": "Demand-Deduction-test",
+          "type": "TRAFFIC_DEMAND",
+          "consolidationType": "SAGE",
+          "params": "{\"demandSteps\":[{\"id\":38,\"name\":\"n1\",\"stepNumber\":1,\"tool\":{\"dmds-for-p2mplsps\":{\"setTraffic\":\"ZERO\",\"serviceClass\":null,\"advanced\":{\"p2mplspsTable\":null,\"optionsFile\":null,\"noGlobalOptions\":false,\"suppressProgress\":false,\"debug\":{\"verbosity\":30}}}},\"enabled\":true}]}",
+          "sourceCollector": {
+            "id": 18,
+            "name": "IGP-test",
+            "type": "TOPO_IGP"
+          },
+          "agents": []
+        },
+        {
+          "id": 19,
+          "name": "LSP-test",
+          "type": "LSP_SNMP",
+          "consolidationType": "DARE",
+          "params": "{\"getFrrLsps\":false,\"advanced\":{\"useCalculatedHops\":false,\"findActualPaths\":true,\"getExtras\":false,\"useSignaledName\":false,\"autoBw\":false,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}",
+          "sourceCollector": {
+            "id": 18,
+            "name": "IGP-test",
+            "type": "TOPO_IGP"
+          },
+          "agents": []
+        },
+        {
+          "id": 29,
+          "name": "Layout-test",
+          "type": "LAYOUT",
+          "consolidationType": "DARE",
+          "params": "{\"templateFile\":\"data/user_upload//tsconfig.json\",\"advanced\":{\"connectTimeout\":60,\"advancedToolOptions\":[]}}",
+          "sourceCollector": {
+            "id": 26,
+            "name": "VPN-test",
+            "type": "TOPO_VPN"
+          },
+          "agents": []
+        },
+        {
+          "id": 28,
+          "name": "Config-Parsing-test",
+          "type": "CONFIG_PARSE",
+          "consolidationType": "DARE",
+          "params": "{\"getConfig\":{\"enable\":true,\"loginConfig\":{\"forceLoginPlatform\":null,\"fallbackLoginPlatform\":null,\"sendEnablePassword\":false,\"telnetUserName\":null,\"telnetPassword\":null},\"timeout\":60,\"debug\":{\"loginRecordMode\":\"OFF\",\"verbosity\":30}},\"parseConfig\":{\"igpProtocol\":\"ISIS\",\"isisLevel\":\"2\",\"ospfArea\":\"0.0.0.0\",\"asn\":null,\"includeObjects\":[],\"parseConfigAdvanced\":{\"circuitMatch\":\"SAME_IGP\",\"lagPortMatch\":\"GUESS\",\"ospfProcessIds\":[],\"isisProcessIds\":[],\"selectLoopBackInt\":0,\"resolveReferences\":true,\"useMultiThreading\":false,\"filterShowCommands\":false,\"buildTopology\":true,\"sharedMedia\":true,\"advancedToolOptions\":[],\"timeout\":60,\"debug\":{\"verbosity\":30}}}}",
+          "sourceCollector": {
+            "id": 26,
+            "name": "VPN-test",
+            "type": "TOPO_VPN"
+          },
+          "agents": []
+        },
+        {
+          "id": 35,
+          "name": "NetFlow-test",
+          "type": "NETFLOW",
+          "consolidationType": "SAGE",
+          "params": "{\"CommonConfigs\":{\"splitAsFlowsOnIngress\":\"aggregate\",\"asn\":\"\",\"addressFamily\":null,\"extNodeTags\":[],\"splitAsFlowsOnEgress\":false,\"extraAggregation\":null,\"logLevel\":\"error\",\"numOfThreads\":16},\"IASConfigs\":{\"trimInterAsFlows\":1,\"matchOnBgpExternalInfo\":false,\"ingress-interface-flow-filter\":\"\",\"egress-interface-flow-filter\":\"\",\"backtrackMicroFlows\":false,\"flowImportFlowIds\":\"\",\"ias-computation-timeout-in-minutes\":60},\"DemandConfigs\":{\"demand-name\":\"\",\"demand-tag\":\"flow\",\"trim-demands\":1,\"service-class\":\"\",\"traffic-level\":\"\",\"missing-flows\":\"false\"}}",
+          "sourceCollector": {
+            "id": 18,
+            "name": "IGP-test",
+            "type": "TOPO_IGP"
+          },
+          "agents": [
+            {
+              "updateDate": [
+                2023,
+                11,
+                16
+              ],
+              "id": 11,
+              "name": "test567",
+              "type": "TRAFFIC_POLLER"
+            }
+          ]
+        },
+        {
+          "id": 27,
+          "name": "Inventory-test",
+          "type": "INVENTORY",
+          "consolidationType": "DARE",
+          "params": "{\"advanced\":{\"actionTimeout\":30,\"getInventoryOptions\":{\"loginAllowed\":true,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}},\"buildInventoryOptions\":{\"debug\":{\"verbosity\":30},\"excludeFile\":null,\"guessTemplateIfNoMatch\":false,\"templateFile\":null,\"hardwareSpecFile\":null}}}",
+          "sourceCollector": {
+            "id": 29,
+            "name": "Layout-test",
+            "type": "LAYOUT"
+          },
+          "agents": []
+        },
+        {
+          "id": 25,
+          "name": "BGP-test",
+          "type": "TOPO_BGP",
+          "consolidationType": "DARE",
+          "params": "{\"advanced\":{\"minPrefixLength\":24,\"minIPv6PrefixLength\":64,\"loginToRouterForMultihop\":true,\"loginConfig\":{\"forceLoginPlatform\":null,\"fallbackLoginPlatform\":null,\"sendEnablePassword\":false,\"telnetUserName\":null,\"telnetPassword\":null},\"findInternalASNLinks\":false,\"findNonIPExitInterface\":false,\"findInternalExitInterface\":false,\"getMacAddress\":false,\"useDNS\":false,\"forceCheckAll\":false,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30,\"loginRecordMode\":\"OFF\"}}}",
+          "sourceCollector": {
+            "id": 18,
+            "name": "IGP-test",
+            "type": "TOPO_IGP"
+          },
+          "agents": []
+        },
+        {
+          "id": 26,
+          "name": "VPN-test",
+          "type": "TOPO_VPN",
+          "consolidationType": "DARE",
+          "params": "{\"vpnType\":[\"VPWS\"],\"advanced\":{\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}",
+          "sourceCollector": {
+            "id": 25,
+            "name": "BGP-test",
+            "type": "TOPO_BGP"
+          },
+          "agents": []
+        },
+        {
+          "id": 18,
+          "name": "IGP-test",
+          "type": "TOPO_IGP",
+          "consolidationType": "DARE",
+          "params": "{\"igpConfigs\":[{\"igpIndex\":1,\"seedRouter\":\"1.2.3.4\",\"igpProtocol\":\"OSPFV3\",\"advanced\":{\"backupRouter\":null,\"getSegment\":false,\"isisLevel\":\"2\",\"ospfArea\":\"0\",\"ospfProcessIds\":[],\"isisProcessIds\":[],\"removeNullProcessId\":false,\"runIGPOffline\":\"OFF\",\"nodeTag\":null,\"loginConfig\":{\"forceLoginPlatform\":null,\"fallbackLoginPlatform\":null,\"sendEnablePassword\":false,\"telnetUserName\":null,\"telnetPassword\":null},\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}],\"collectInterfaces\":true,\"advanced\":{\"nodes\":{\"qosNodeFilterList\":[],\"performanceData\":false,\"removeNodeSuffix\":[],\"discoverQosQueue\":true,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}},\"interfaces\":{\"findParallelLinks\":false,\"ipGuessing\":\"SAFE\",\"discoverLags\":false,\"lagPortMatch\":\"GUESS\",\"circuitCleanup\":false,\"copyDescription\":false,\"collectPhysicalPort\":false,\"minIPGuessPrefixLength\":0,\"minPrefixLength\":30,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}}",
+          "sourceCollector": null,
+          "agents": []
+        }
+      ]
+    },
+    {
+      "nodeProfileData": {
+        "updateDate": null,
+        "id": 11,
+        "name": "test4444",
+        "useNodeListAsIncludeFilter": false
+      },
+      "id": 15,
+      "name": "test_igp_tc",
+      "draft": false,
+      "draftConfig": null,
+      "collectors": [
+        {
+          "id": 40,
+          "name": "IGP-test_igp_tc",
+          "type": "TOPO_IGP",
+          "consolidationType": "DARE",
+          "params": "{\"igpConfigs\":[{\"igpIndex\":1,\"seedRouter\":\"1.2.3.5\",\"igpProtocol\":\"OSPF\",\"advanced\":{\"backupRouter\":null,\"getSegment\":false,\"isisLevel\":\"2\",\"ospfArea\":\"0\",\"ospfProcessIds\":[],\"isisProcessIds\":[],\"removeNullProcessId\":false,\"runIGPOffline\":\"OFF\",\"nodeTag\":null,\"loginConfig\":{\"forceLoginPlatform\":null,\"fallbackLoginPlatform\":null,\"sendEnablePassword\":false,\"telnetUserName\":null,\"telnetPassword\":null},\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}],\"collectInterfaces\":true,\"advanced\":{\"nodes\":{\"qosNodeFilterList\":[],\"performanceData\":false,\"removeNodeSuffix\":[],\"discoverQosQueue\":true,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}},\"interfaces\":{\"findParallelLinks\":false,\"ipGuessing\":\"SAFE\",\"discoverLags\":false,\"lagPortMatch\":\"GUESS\",\"circuitCleanup\":false,\"copyDescription\":false,\"collectPhysicalPort\":false,\"minIPGuessPrefixLength\":0,\"minPrefixLength\":30,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}}",
+          "sourceCollector": null,
+          "agents": []
+        }
+      ]
+    },
+    {
+      "nodeProfileData": {
+        "updateDate": null,
+        "id": 7,
+        "name": "node-profile",
+        "useNodeListAsIncludeFilter": false
+      },
+      "id": 13,
+      "name": "test567",
+      "draft": false,
+      "draftConfig": "",
+      "collectors": [
+        {
+          "id": 17,
+          "name": "VPN-test567",
+          "type": "TOPO_VPN",
+          "consolidationType": "DARE",
+          "params": "{\"vpnType\":[\"VPWS\"],\"advanced\":{\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}",
+          "sourceCollector": {
+            "id": 13,
+            "name": "LSP-test567",
+            "type": "LSP_SNMP"
+          },
+          "agents": []
+        },
+        {
+          "id": 13,
+          "name": "LSP-test567",
+          "type": "LSP_SNMP",
+          "consolidationType": "DARE",
+          "params": "{\"getFrrLsps\":true,\"advanced\":{\"useCalculatedHops\":false,\"findActualPaths\":true,\"getExtras\":true,\"useSignaledName\":true,\"autoBw\":false,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}",
+          "sourceCollector": {
+            "id": 16,
+            "name": "IGP-test567",
+            "type": "TOPO_IGP"
+          },
+          "agents": []
+        },
+        {
+          "id": 14,
+          "name": "BGP-test567",
+          "type": "TOPO_BGP",
+          "consolidationType": "DARE",
+          "params": "{\"advanced\":{\"protocol\":[],\"minPrefixLength\":24,\"minIPv6PrefixLength\":64,\"loginToRouterForMultihop\":true,\"loginConfig\":{\"forceLoginPlatform\":null,\"fallbackLoginPlatform\":null,\"sendEnablePassword\":false,\"telnetUserName\":null,\"telnetPassword\":null},\"findInternalASNLinks\":false,\"findNonIPExitInterface\":false,\"findInternalExitInterface\":false,\"getMacAddress\":false,\"useDNS\":false,\"forceCheckAll\":false,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30,\"loginRecordMode\":\"OFF\"}}}",
+          "sourceCollector": {
+            "id": 16,
+            "name": "IGP-test567",
+            "type": "TOPO_IGP"
+          },
+          "agents": []
+        },
+        {
+          "id": 41,
+          "name": "Traffic-Collection-test567",
+          "type": "TRAFFIC_POLL",
+          "consolidationType": "SAGE",
+          "params": "{\"enabled\":false,\"interfaceTraffic\":{\"enabled\":false,\"period\":60,\"qosEnabled\":false,\"vpnEnabled\":false},\"lspTraffic\":{\"enabled\":true,\"period\":60},\"macTraffic\":{\"enabled\":false,\"period\":60},\"snmpTrafficPoller\":{\"minWindowLengthStats\":300,\"maxWindowLengthStats\":450,\"rawCounterTTL\":60,\"discardOverCapacity\":true,\"netRecorderFileMaxSize\":10,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}",
+          "sourceCollector": {
+            "id": 16,
+            "name": "IGP-test567",
+            "type": "TOPO_IGP"
+          },
+          "agents": [
+            {
+              "updateDate": [
+                2023,
+                11,
+                16
+              ],
+              "id": 11,
+              "name": "test567",
+              "type": "TRAFFIC_POLLER"
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "name": "IGP-test567",
+          "type": "TOPO_IGP",
+          "consolidationType": "DARE",
+          "params": "{\"igpConfigs\":[{\"igpIndex\":1,\"seedRouter\":\"1.2.3.4\",\"igpProtocol\":\"ISIS\",\"advanced\":{\"backupRouter\":null,\"getSegment\":false,\"isisLevel\":\"2\",\"ospfArea\":\"0\",\"ospfProcessIds\":[],\"isisProcessIds\":[],\"removeNullProcessId\":false,\"runIGPOffline\":\"OFF\",\"nodeTag\":null,\"loginConfig\":{\"forceLoginPlatform\":null,\"fallbackLoginPlatform\":null,\"sendEnablePassword\":false,\"telnetUserName\":null,\"telnetPassword\":null},\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}],\"collectInterfaces\":true,\"advanced\":{\"nodes\":{\"qosNodeFilterList\":[],\"performanceData\":false,\"removeNodeSuffix\":[],\"discoverQosQueue\":true,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}},\"interfaces\":{\"findParallelLinks\":false,\"ipGuessing\":\"SAFE\",\"discoverLags\":false,\"lagPortMatch\":\"GUESS\",\"circuitCleanup\":false,\"copyDescription\":false,\"collectPhysicalPort\":false,\"minIPGuessPrefixLength\":0,\"minPrefixLength\":30,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}}",
+          "sourceCollector": null,
+          "agents": []
+        },
+        {
+          "id": 42,
+          "name": "Demand-Deduction-test567",
+          "type": "TRAFFIC_DEMAND",
+          "consolidationType": "SAGE",
+          "params": "{\"demandSteps\":[{\"id\":null,\"name\":\"yat\",\"stepNumber\":1,\"tool\":{\"demand-deduction\":{\"fixDemandsWithTraffic\":true,\"demandUpperBound\":0.0,\"removeZeroBwDemands\":true,\"zeroBwTolerance\":0.0,\"zeroFlowTolerance\":0.0,\"measurements\":{\"nodes\":true,\"nodesPriority\":2,\"interfaces\":true,\"interfacesPriority\":1,\"lsps\":true,\"lspsPriority\":2,\"flows\":true,\"flowsPriority\":2},\"advanced\":{\"demandsTable\":\"\",\"fixDemandsTable\":\"\",\"fixMulticastDemands\":false,\"reportFile\":\"\",\"trafficLevel\":\"\",\"scaleMeasurements\":[],\"measErrors\":\"SPREAD\",\"maxPercentLinkUtil\":\"\",\"onlyTunnelAs\":\"\",\"optionsFile\":null,\"noGlobalOptions\":false,\"suppressProgress\":false,\"computationTime\":10,\"warnDynamicLsps\":false,\"warnUnroutedLsps\":false,\"debug\":{\"verbosity\":30}}}},\"enabled\":false}]}",
+          "sourceCollector": {
+            "id": 41,
+            "name": "Traffic-Collection-test567",
+            "type": "TRAFFIC_POLL"
+          },
+          "agents": []
+        }
+      ]
+    },
+    {
+      "nodeProfileData": {
+        "updateDate": null,
+        "id": 11,
+        "name": "test4444",
+        "useNodeListAsIncludeFilter": false
+      },
+      "id": 16,
+      "name": "test_16_nov_23_11_50",
+      "draft": false,
+      "draftConfig": "",
+      "collectors": [
+        {
+          "id": 43,
+          "name": "IGP-test_16_nov_23_11_50",
+          "type": "TOPO_IGP",
+          "consolidationType": "DARE",
+          "params": "{\"igpConfigs\":[{\"igpIndex\":1,\"seedRouter\":\"1.2.3.4\",\"igpProtocol\":\"ISIS\",\"advanced\":{\"backupRouter\":null,\"getSegment\":false,\"isisLevel\":\"2\",\"ospfArea\":\"0\",\"ospfProcessIds\":[],\"isisProcessIds\":[],\"removeNullProcessId\":false,\"runIGPOffline\":\"OFF\",\"nodeTag\":null,\"loginConfig\":{\"forceLoginPlatform\":null,\"fallbackLoginPlatform\":null,\"sendEnablePassword\":false,\"telnetUserName\":null,\"telnetPassword\":null},\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}],\"collectInterfaces\":true,\"advanced\":{\"nodes\":{\"qosNodeFilterList\":[],\"performanceData\":false,\"removeNodeSuffix\":[],\"discoverQosQueue\":true,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}},\"interfaces\":{\"findParallelLinks\":false,\"ipGuessing\":\"SAFE\",\"discoverLags\":false,\"lagPortMatch\":\"GUESS\",\"circuitCleanup\":false,\"copyDescription\":false,\"collectPhysicalPort\":false,\"minIPGuessPrefixLength\":0,\"minPrefixLength\":30,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}}",
+          "sourceCollector": null,
+          "agents": []
+        },
+        {
+          "id": 44,
+          "name": "Demand-Deduction-test_16_nov_23_11_50",
+          "type": "TRAFFIC_DEMAND",
+          "consolidationType": "SAGE",
+          "params": "{\"demandSteps\":[{\"id\":null,\"name\":\"n1\",\"stepNumber\":1,\"tool\":{\"copy-demands\":{\"network\":{\"id\":null,\"name\":\"Script1\",\"type\":\"EXTERNAL_SCRIPT\"}}},\"enabled\":false},{\"id\":null,\"name\":\"n2\",\"stepNumber\":2,\"tool\":{\"demand-deduction\":{\"fixDemandsWithTraffic\":false,\"demandUpperBound\":0.0,\"removeZeroBwDemands\":true,\"zeroBwTolerance\":0.0,\"zeroFlowTolerance\":0.0,\"measurements\":{\"nodes\":true,\"nodesPriority\":2,\"interfaces\":true,\"interfacesPriority\":1,\"lsps\":true,\"lspsPriority\":2,\"flows\":true,\"flowsPriority\":2},\"advanced\":{\"demandsTable\":\"\",\"fixDemandsTable\":\"\",\"fixMulticastDemands\":false,\"reportFile\":\"\",\"trafficLevel\":\"\",\"scaleMeasurements\":[],\"measErrors\":\"SPREAD\",\"maxPercentLinkUtil\":\"\",\"onlyTunnelAs\":\"\",\"optionsFile\":null,\"noGlobalOptions\":false,\"suppressProgress\":false,\"computationTime\":10,\"warnDynamicLsps\":false,\"warnUnroutedLsps\":false,\"debug\":{\"verbosity\":30}}}},\"enabled\":false}]}",
+          "sourceCollector": {
+            "id": 45,
+            "name": "Script1",
+            "type": "EXTERNAL_SCRIPT"
+          },
+          "agents": []
+        },
+        {
+          "id": 45,
+          "name": "Script1",
+          "type": "EXTERNAL_SCRIPT",
+          "consolidationType": "SAGE",
+          "params": "{\"executableScript\":\"bin.sh\",\"scriptLanguage\":\"PYTHON\",\"compressedFile\":\"data/user_upload//cui-utils-7.14.22.tgz\",\"aggregatorProperties\":\"data/user_upload//sonar-project.properties\",\"timeout\":30}",
+          "sourceCollector": {
+            "id": 43,
+            "name": "IGP-test_16_nov_23_11_50",
+            "type": "TOPO_IGP"
+          },
+          "agents": []
+        }
+      ]
+    },
+    {
+      "nodeProfileData": {
+        "updateDate": null,
+        "id": 7,
+        "name": "node-profile",
+        "useNodeListAsIncludeFilter": false
+      },
+      "id": 17,
+      "name": "TestDemand",
+      "draft": false,
+      "draftConfig": "",
+      "collectors": [
+        {
+          "id": 64,
+          "name": "Demand-Deduct",
+          "type": "TRAFFIC_DEMAND",
+          "consolidationType": "SAGE",
+          "params": "{\"demandSteps\":[{\"id\":60,\"name\":\"1\",\"stepNumber\":1,\"tool\":{\"dmd-mesh-creator\":{\"bothDirections\":true,\"deleteSameName\":true,\"serviceClass\":null,\"topology\":null,\"advanced\":{\"sourceList\":[],\"sourceNodes\":null,\"sourceSites\":null,\"sourceAs\":null,\"sourceEndpoints\":null,\"destNodes\":null,\"destSites\":null,\"destAs\":null,\"destEndpoints\":null,\"demandmesh-table\":null,\"demandmeshTable\":null,\"outDemandmeshTable\":null,\"outDemandsTable\":null,\"externalAsInterface-endpoints\":true,\"externalAsInterfaceEndpoints\":true,\"respectAsRelationships\":true,\"externalMesh\":\"RESPECT\",\"setName\":null,\"setTagList\":null,\"optionsFile\":null,\"noGlobalOptions\":false,\"destEqualSource\":false,\"destList\":[],\"destination\":\"\",\"includeDemandToSelf\":true,\"suppressProgress\":false,\"debug\":{\"verbosity\":30}}}},\"enabled\":true},{\"id\":61,\"name\":\"2\",\"stepNumber\":2,\"tool\":{\"dmds-for-lsps\":{\"private\":false,\"setTraffic\":\"BW\",\"serviceClass\":null,\"advanced\":{\"lspsTable\":null,\"optionsFile\":null,\"noGlobalOptions\":false,\"suppressProgress\":false,\"debug\":{\"verbosity\":30}}}},\"enabled\":true},{\"id\":62,\"name\":\"3\",\"stepNumber\":3,\"tool\":{\"dmds-for-p2mplsps\":{\"setTraffic\":\"ZERO\",\"serviceClass\":null,\"advanced\":{\"p2mplspsTable\":null,\"optionsFile\":null,\"noGlobalOptions\":false,\"suppressProgress\":false,\"debug\":{\"verbosity\":30}}}},\"enabled\":true},{\"id\":63,\"name\":\"4\",\"stepNumber\":4,\"tool\":{\"demand-deduction\":{\"fixDemandsWithTraffic\":false,\"demandUpperBound\":0.0,\"removeZeroBwDemands\":true,\"zeroBwTolerance\":0.0,\"zeroFlowTolerance\":0.0,\"measurements\":{\"nodes\":true,\"nodesPriority\":2,\"interfaces\":true,\"interfacesPriority\":1,\"lsps\":true,\"lspsPriority\":2,\"flows\":true,\"flowsPriority\":2},\"advanced\":{\"demandsTable\":\"\",\"fixDemandsTable\":\"\",\"fixMulticastDemands\":false,\"reportFile\":\"\",\"trafficLevel\":\"\",\"scaleMeasurements\":[],\"measErrors\":\"SPREAD\",\"maxPercentLinkUtil\":\"\",\"onlyTunnelAs\":\"\",\"optionsFile\":null,\"noGlobalOptions\":false,\"suppressProgress\":false,\"computationTime\":10,\"warnDynamicLsps\":false,\"warnUnroutedLsps\":false,\"debug\":{\"verbosity\":30}}}},\"enabled\":true},{\"id\":65,\"name\":\"5\",\"stepNumber\":5,\"tool\":{\"copy-demands\":{\"sourceCollector\":{\"id\":46,\"name\":\"IGP-TestDemand\",\"type\":\"TOPO_IGP\"}}},\"enabled\":true}]}",
+          "sourceCollector": {
+            "id": 46,
+            "name": "IGP-TestDemand",
+            "type": "TOPO_IGP"
+          },
+          "agents": []
+        },
+        {
+          "id": 46,
+          "name": "IGP-TestDemand",
+          "type": "TOPO_IGP",
+          "consolidationType": "DARE",
+          "params": "{\"igpConfigs\":[{\"igpIndex\":1,\"seedRouter\":\"1.1.1.1\",\"igpProtocol\":\"ISIS\",\"advanced\":{\"backupRouter\":null,\"getSegment\":false,\"isisLevel\":\"2\",\"ospfArea\":\"0\",\"ospfProcessIds\":[],\"isisProcessIds\":[],\"removeNullProcessId\":false,\"runIGPOffline\":\"OFF\",\"nodeTag\":null,\"loginConfig\":{\"forceLoginPlatform\":null,\"fallbackLoginPlatform\":null,\"sendEnablePassword\":false,\"telnetUserName\":null,\"telnetPassword\":null},\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}],\"collectInterfaces\":true,\"advanced\":{\"nodes\":{\"qosNodeFilterList\":[],\"performanceData\":false,\"removeNodeSuffix\":[],\"discoverQosQueue\":true,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}},\"interfaces\":{\"findParallelLinks\":false,\"ipGuessing\":\"SAFE\",\"discoverLags\":false,\"lagPortMatch\":\"GUESS\",\"circuitCleanup\":false,\"copyDescription\":false,\"collectPhysicalPort\":false,\"minIPGuessPrefixLength\":0,\"minPrefixLength\":30,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}}",
+          "sourceCollector": null,
+          "agents": []
+        }
+      ]
+    }
+  ],
+  "schedulerConfigDataList": [
+    {
+      "id": 71,
+      "networkId": 18,
+      "networkName": "DemandTest",
+      "name": "ScheduleWithArchive",
+      "cronExpression": null,
+      "runNow": true,
+      "taskConfigDataList": [
+        {
+          "taskName": "IGP-c2",
+          "collectorId": 62,
+          "collectorName": "Demand-Deduct_DEMAND_FOR_P2MP_LSPS",
+          "collect": true,
+          "aggreagate": false,
+          "archive": true
+        },
+        {
+          "taskName": "Multicast-c2_SNMP_FIND_MULTICAST_COPY_DEMANDS",
+          "collectorId": 65,
+          "collectorName": "Demand-Deduct_COPY_DEMANDS",
+          "collect": true,
+          "aggreagate": false,
+          "archive": true
+        },
+        {
+          "taskName": "Multicast-c2_SNMP_FIND_MULTICAST_DEMAND_MESH_CREATOR",
+          "collectorId": 60,
+          "collectorName": "Demand-Deduct_DEMAND_MESH_CREATOR",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        },
+        {
+          "taskName": "Multicast-c2_SNMP_FIND_MULTICAST_DEMAND_FOR_LSPS",
+          "collectorId": 61,
+          "collectorName": "Demand-Deduct_DEMAND_FOR_LSPS",
+          "collect": true,
+          "aggreagate": false,
+          "archive": true
+        },
+        {
+          "taskName": "Multicast-c2_SNMP_FIND_MULTICAST_DEMAND_FOR_P2MP_LSPS",
+          "collectorId": 62,
+          "collectorName": "Demand-Deduct_DEMAND_FOR_P2MP_LSPS",
+          "collect": true,
+          "aggreagate": false,
+          "archive": true
+        },
+        {
+          "taskName": "Multicast-c2_SNMP_FIND_MULTICAST_DEMAND_DEDUCTION",
+          "collectorId": 63,
+          "collectorName": "Demand-Deduct_DEMAND_DEDUCTION",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        },
+        {
+          "taskName": "Multicast-c2_SNMP_POLL_MULTICAST",
+          "collectorId": 65,
+          "collectorName": "Demand-Deduct_COPY_DEMANDS",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        },
+        {
+          "taskName": "Multicast-c2_LOGIN_FIND_MULTICAST",
+          "collectorId": 66,
+          "collectorName": "IGP-DemandTest",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        },
+        {
+          "taskName": "Inventory-c2",
+          "collectorId": 63,
+          "collectorName": "Demand-Deduct_DEMAND_DEDUCTION",
+          "collect": true,
+          "aggreagate": false,
+          "archive": true
+        },
+        {
+          "taskName": "Archive_task",
+          "collectorId": 0,
+          "collectorName": null,
+          "collect": false,
+          "aggreagate": false,
+          "archive": true
+        }
+      ],
+      "active": true
+    },
+    {
+      "id": 70,
+      "networkId": 18,
+      "networkName": "c2",
+      "name": "ScheduleUpdate",
+      "cronExpression": null,
+      "runNow": true,
+      "taskConfigDataList": [
+        {
+          "taskName": "IGP-c2",
+          "collectorId": 62,
+          "collectorName": "Demand-Deduct_DEMAND_FOR_P2MP_LSPS",
+          "collect": true,
+          "aggreagate": true,
+          "archive": true
+        },
+        {
+          "taskName": "Multicast-c2_SNMP_FIND_MULTICAST_COPY_DEMANDS",
+          "collectorId": 65,
+          "collectorName": "Demand-Deduct_COPY_DEMANDS",
+          "collect": true,
+          "aggreagate": true,
+          "archive": true
+        },
+        {
+          "taskName": "Multicast-c2_SNMP_FIND_MULTICAST_DEMAND_FOR_P2MP_LSPS",
+          "collectorId": 62,
+          "collectorName": "Demand-Deduct_DEMAND_FOR_P2MP_LSPS",
+          "collect": true,
+          "aggreagate": true,
+          "archive": true
+        },
+        {
+          "taskName": "Multicast-c2_SNMP_FIND_MULTICAST_DEMAND_DEDUCTION",
+          "collectorId": 63,
+          "collectorName": "Demand-Deduct_DEMAND_DEDUCTION",
+          "collect": true,
+          "aggreagate": true,
+          "archive": false
+        },
+        {
+          "taskName": "Multicast-c2_SNMP_POLL_MULTICAST",
+          "collectorId": 65,
+          "collectorName": "Demand-Deduct_COPY_DEMANDS",
+          "collect": true,
+          "aggreagate": true,
+          "archive": false
+        },
+        {
+          "taskName": "Multicast-c2_LOGIN_FIND_MULTICAST",
+          "collectorId": 66,
+          "collectorName": "IGP-DemandTest",
+          "collect": true,
+          "aggreagate": true,
+          "archive": false
+        },
+        {
+          "taskName": "Inventory-c2",
+          "collectorId": 63,
+          "collectorName": "Demand-Deduct_DEMAND_DEDUCTION",
+          "collect": true,
+          "aggreagate": true,
+          "archive": true
+        }
+      ],
+      "active": true
+    },
+    {
+      "id": 11,
+      "networkId": 18,
+      "networkName": "DemandTest",
+      "name": "Schedule",
+      "cronExpression": null,
+      "runNow": true,
+      "taskConfigDataList": [
+        {
+          "taskName": "IGP-c2",
+          "collectorId": 62,
+          "collectorName": "Demand-Deduct_DEMAND_FOR_P2MP_LSPS",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        },
+        {
+          "taskName": "Multicast-c2_SNMP_FIND_MULTICAST_COPY_DEMANDS",
+          "collectorId": 65,
+          "collectorName": "Demand-Deduct_COPY_DEMANDS",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        },
+        {
+          "taskName": "Multicast-c2_SNMP_FIND_MULTICAST_DEMAND_MESH_CREATOR",
+          "collectorId": 60,
+          "collectorName": "Demand-Deduct_DEMAND_MESH_CREATOR",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        },
+        {
+          "taskName": "Multicast-c2_SNMP_FIND_MULTICAST_DEMAND_FOR_LSPS",
+          "collectorId": 61,
+          "collectorName": "Demand-Deduct_DEMAND_FOR_LSPS",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        },
+        {
+          "taskName": "Multicast-c2_SNMP_FIND_MULTICAST_DEMAND_FOR_P2MP_LSPS",
+          "collectorId": 62,
+          "collectorName": "Demand-Deduct_DEMAND_FOR_P2MP_LSPS",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        },
+        {
+          "taskName": "Multicast-c2_SNMP_FIND_MULTICAST_DEMAND_DEDUCTION",
+          "collectorId": 63,
+          "collectorName": "Demand-Deduct_DEMAND_DEDUCTION",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        },
+        {
+          "taskName": "Multicast-c2_SNMP_POLL_MULTICAST",
+          "collectorId": 65,
+          "collectorName": "Demand-Deduct_COPY_DEMANDS",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        },
+        {
+          "taskName": "Multicast-c2_LOGIN_FIND_MULTICAST",
+          "collectorId": 66,
+          "collectorName": "IGP-DemandTest",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        },
+        {
+          "taskName": "Inventory-c2",
+          "collectorId": 63,
+          "collectorName": "Demand-Deduct_DEMAND_DEDUCTION",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        }
+      ],
+      "active": true
+    },
+    {
+      "id": 63,
+      "networkId": 14,
+      "networkName": "external-exe",
+      "name": "Schedule",
+      "cronExpression": "* 0/12 * ? * *",
+      "runNow": false,
+      "taskConfigDataList": [
+        {
+          "taskName": "IGP-external-exe",
+          "collectorId": 56,
+          "collectorName": "Demand-Deduction_DEMAND_FOR_P2MP_LSPS",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        }
+      ],
+      "active": true
+    },
+    {
+      "id": 29,
+      "networkId": 14,
+      "networkName": "external-exe",
+      "name": "Schedule",
+      "cronExpression": null,
+      "runNow": true,
+      "taskConfigDataList": [
+        {
+          "taskName": "Script003",
+          "collectorId": 57,
+          "collectorName": "Demand-Deduction_DEMAND_DEDUCTION",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        },
+        {
+          "taskName": "IGP-external-exe",
+          "collectorId": 56,
+          "collectorName": "Demand-Deduction_DEMAND_FOR_P2MP_LSPS",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        }
+      ],
+      "active": true
+    },
+    {
+      "id": 65,
+      "networkId": 14,
+      "networkName": "external-exe",
+      "name": "Schedule n2",
+      "cronExpression": "* 0/9 * ? * *",
+      "runNow": false,
+      "taskConfigDataList": [
+        {
+          "taskName": "IGP-external-exe",
+          "collectorId": 56,
+          "collectorName": "Demand-Deduction_DEMAND_FOR_P2MP_LSPS",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        }
+      ],
+      "active": true
+    },
+    {
+      "id": 64,
+      "networkId": 14,
+      "networkName": "external-exe",
+      "name": "Schedule n1",
+      "cronExpression": "* 0/12 * ? * *",
+      "runNow": false,
+      "taskConfigDataList": [
+        {
+          "taskName": "IGP-external-exe",
+          "collectorId": 56,
+          "collectorName": "Demand-Deduction_DEMAND_FOR_P2MP_LSPS",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        }
+      ],
+      "active": true
+    },
+    {
+      "id": 1,
+      "networkId": 16,
+      "networkName": "New1",
+      "name": "Schedule",
+      "cronExpression": null,
+      "runNow": true,
+      "taskConfigDataList": [
+        {
+          "taskName": "IGP-New1",
+          "collectorId": 58,
+          "collectorName": null,
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        },
+        {
+          "taskName": "VPN-New1",
+          "collectorId": 59,
+          "collectorName": "Demand-Deduction",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        }
+      ],
+      "active": true
+    },
+    {
+      "id": 2,
+      "networkId": 17,
+      "networkName": "c1",
+      "name": "Schedule",
+      "cronExpression": null,
+      "runNow": true,
+      "taskConfigDataList": [
+        {
+          "taskName": "IGP-c1",
+          "collectorId": 60,
+          "collectorName": "Demand-Deduct_DEMAND_MESH_CREATOR",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        },
+        {
+          "taskName": "LSP-c1",
+          "collectorId": 61,
+          "collectorName": "Demand-Deduct_DEMAND_FOR_LSPS",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        }
+      ],
+      "active": true
+    }
+  ]
+}

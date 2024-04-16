@@ -1,0 +1,234 @@
+# MATE Network Access Configuration File
+# --------------------------------------
+# This file specifies parameters used for network access through
+# SNMP, Login, and the SAM Interface.
+# Please consult MATE documentation for more information.
+
+<GlobalSettings>
+TaskRegExp	GlobalMode
+	Normal
+
+<PerRouterSettings>
+NodeRegExp	IPRegExp	TaskRegExp	RouterMode	SQLFilter
+		^(?!(?:snmp_poll|snmp_find_interfaces|snmp_find_nodes)$)\w+$	Ignore	NetIntSource = 'Explicit'
+		poll_ldp	Limit_CRS	OS REGEXP '^IOS XR 3\.9\.1\.?\s*$' OR (length(OS) = 14 AND OS BETWEEN 'IOS XR 3.9.1.0' AND 'IOS XR 3.9.1.9') OR (length(OS) = 15 AND OS BETWEEN 'IOS XR 3.9.1.10' AND 'IOS XR 3.9.1.23')
+		poll_ldp	Normal	OS REGEXP '^IOS XR 3\.9\.1.*'
+		poll_ldp	Limit_CRS	OS REGEXP '^IOS XR 4\.0\.0\.?\s*$' OR (length(OS) = 14 AND OS BETWEEN 'IOS XR 4.0.0.0' AND 'IOS XR 4.0.0.9')
+		poll_ldp	Normal	OS REGEXP '^IOS XR 4\.0\..*'
+		poll_ldp	Limit_CRS	OS REGEXP '^IOS XR.*'
+		.*(find|poll)_multicast.*	Multicast_Login	Vendor = 'Cisco' AND ((Model = '7600' AND (OS LIKE 'IOS 12.2(33)SRC%' OR OS = 'IOS 12.2(20090422:130438)' OR OS = 'IOS 12.2(18)SXF3')) OR (Model != 'ASR9K' AND (OS BETWEEN 'IOS XR 4.0.' AND 'IOS XR 4.0.5'))) 	
+		.*(find|poll)_multicast.*	Multicast_Login	Vendor = 'Juniper' AND OS LIKE 'JUNOS 10.4R8.5%' 	
+		.*poll.*	ALU_REALTIME	OS REGEXP '^TiMOS.*'
+		.*(find|poll)_multicast.*	Multicast_Snmp
+		(snmp_poll_rsvp|snmp_poll)	Junos_new	Vendor = 'Juniper' AND OS LIKE 'JUNOS 10.4R%' AND (CAST(SUBSTR(OS, 12) AS Double) >= 3)
+		(snmp_poll_rsvp|snmp_poll)	Junos_new	Vendor = 'Juniper' AND OS LIKE 'JUNOS 10.4S%' AND (CAST(SUBSTR(OS, 12) AS Double) >= 3)
+		(snmp_poll_rsvp|snmp_poll)	Junos_new	Vendor = 'Juniper' AND OS LIKE 'JUNOS __._R%' AND (CAST(SUBSTR(OS, 7, 4)  AS Double) >= 10.5)
+		(snmp_poll_rsvp|snmp_poll)	Junos_new	Vendor = 'Juniper' AND OS LIKE 'JUNOS __._S%' AND (CAST(SUBSTR(OS, 7, 4)  AS Double) >= 10.5)
+		(snmp_poll_rsvp|snmp_poll)	Junos_new	Vendor = 'Juniper' AND (OS LIKE 'JUNOS 11.%' OR OS LIKE 'JUNOS 12.%' OR OS LIKE 'JUNOS 13.%')
+		(snmp_poll_rsvp|snmp_poll)	Junos_old	Vendor = 'Juniper' AND OS LIKE 'JUNOS %'
+#		(snmp_find_nodes|snmp_find_interfaces|snmp_find_rsvp|snmp_poll)	Ignore	Vendor = 'Alcatel-Lucent'
+			Normal
+
+<GlobalModes>
+Name	Property	Value
+# The maximum number of queries the tool can have outstanding 
+# across all SNMP sessions. This should optimally be 
+# SNMP_max_open_sessions * SNMP_max_queries_per_router
+Normal	SNMP_max_queries_total	500
+# The maximum SNMP sessions that can be open at the same time.
+Normal	SNMP_max_open_sessions	100
+# The maximum time in ( seconds ) allowed to collect SNMP data before
+# the tool times out.
+Normal	SNMP_collection_interval	120000
+# The maximum telnet/ssh sessions that can be open at the same time.
+Normal	LOGIN_max_open_sessions	10
+# The time, in seconds, to wait between session logins. For cases where a login
+# authentication server limits multiple logins to one per period of time.
+# Default is 0 (no concurent login restrictions).
+Normal	LOGIN_session_open_interval	0
+
+
+
+<RouterModes>
+Name	Property	Value
+# The maximum time (in seconds) to wait for a response to an SNMP query
+Normal	SNMP_max_timeout	3
+ALU_REALTIME	SNMP_max_timeout	3
+Ignore	SNMP_max_timeout	0
+Limit_CRS	SNMP_max_timeout	3
+Multicast_Login	SNMP_max_timeout	3
+Multicast_Snmp	SNMP_max_timeout	3
+Junos_old	SNMP_max_timeout	3
+Junos_new	SNMP_max_timeout	3
+# The number of times to re-try an SNMP query if it times-out
+Normal	SNMP_query_retries	5
+ALU_REALTIME	SNMP_query_retries	5
+Ignore	SNMP_query_retries	0
+Limit_CRS	SNMP_query_retries	5
+Multicast_Login	SNMP_query_retries	5
+Multicast_Snmp	SNMP_query_retries	5
+Junos_old	SNMP_query_retries	5
+Junos_new	SNMP_query_retries	5
+# The maximum number of queries an SNMP session can have outstanding
+Normal	SNMP_max_queries_per_router	5
+ALU_REALTIME	SNMP_max_queries_per_router	5
+Ignore	SNMP_max_queries_per_router	0
+Limit_CRS	SNMP_max_queries_per_router	5
+Multicast_Login	SNMP_max_queries_per_router	5
+Multicast_Snmp	SNMP_max_queries_per_router	5
+Junos_old	SNMP_max_queries_per_router	5
+Junos_new	SNMP_max_queries_per_router	5
+# The maximum number of variables we can fit in a single SNMP query
+Normal	SNMP_max_variables_per_query	16
+ALU_REALTIME	SNMP_max_variables_per_query	16
+Ignore	SNMP_max_variables_per_query	0
+Limit_CRS	SNMP_max_variables_per_query	16
+Multicast_Login	SNMP_max_variables_per_query	16
+Multicast_Snmp	SNMP_max_variables_per_query	16
+Junos_old	SNMP_max_variables_per_query	16
+Junos_new	SNMP_max_variables_per_query	16
+# The largest SNMP message to try to receive
+Normal	SNMP_max_message_size	1472
+ALU_REALTIME	SNMP_max_message_size	1472
+Ignore	SNMP_max_message_size	0
+Limit_CRS	SNMP_max_message_size	1472
+Multicast_Login	SNMP_max_message_size	1472
+Multicast_Snmp	SNMP_max_message_size	1472
+Junos_old	SNMP_max_message_size	1472
+Junos_new	SNMP_max_message_size	1472
+# If not 0, send no SNMP requests at all to the router
+Normal	SNMP_ignore	0
+ALU_REALTIME	SNMP_ignore	0
+Ignore	SNMP_ignore	1
+Limit_CRS	SNMP_ignore	1
+Multicast_Login	SNMP_ignore	1
+Multicast_Snmp	SNMP_ignore	0
+Junos_old	SNMP_ignore	0
+Junos_new	SNMP_ignore	0
+# The number of responses per bulk request. If 0, bulk query is disabled.
+# Note: the maximum number of responses that can be packed in a single PDU
+# is determined by the PDU size. Also, too many resonses makes the router
+# work harder to fill the PDU with unused responses if the table is small.
+Normal	SNMP_bulk_query_responses	16
+ALU_REALTIME	SNMP_bulk_query_responses	16
+Ignore	SNMP_bulk_query_responses	0
+Limit_CRS	SNMP_bulk_query_responses	16
+Multicast_Login	SNMP_bulk_query_responses	16
+Multicast_Snmp	SNMP_bulk_query_responses	16
+Junos_old	SNMP_bulk_query_responses	16
+Junos_new	SNMP_bulk_query_responses	16
+
+# The number of times to retry the telnet/ssh session operation on failure
+Normal	LOGIN_num_retries	1
+ALU_REALTIME	LOGIN_num_retries	1
+Limit_CRS	LOGIN_num_retries	1
+Multicast_Login	LOGIN_num_retries	1
+Multicast_Snmp	LOGIN_num_retries	1
+Junos_old	LOGIN_num_retries	1
+Junos_new	LOGIN_num_retries	1
+# The maximum time (in seconds) given for a telnet/ssh session to login
+Normal	LOGIN_timeout	15
+ALU_REALTIME	LOGIN_timeout	15
+Limit_CRS	LOGIN_timeout	15
+Multicast_Login	LOGIN_timeout	15
+Multicast_Snmp	LOGIN_timeout	15
+Junos_old	LOGIN_timeout	15
+Junos_new	LOGIN_timeout	15
+# The maximum time (in seconds) for a telnet/ssh session to be inactive (idle)
+# before the session timeouts.
+Normal	LOGIN_session_idle_timeout	15
+ALU_REALTIME	LOGIN_session_idle_timeout	15
+Limit_CRS	LOGIN_session_idle_timeout	15
+Multicast_Login	LOGIN_session_idle_timeout	15
+Multicast_Snmp	LOGIN_session_idle_timeout	15
+Junos_old	LOGIN_session_idle_timeout	15
+Junos_new	LOGIN_session_idle_timeout	15
+# The maximum time (in seconds) to hold a telnet/ssh session open
+# (includes LOGIN_timeout). This is the total time allowed to stay connected
+# to a session and retrieve all data.
+Normal	LOGIN_session_timeout	300
+ALU_REALTIME	LOGIN_session_timeout	300
+Limit_CRS	LOGIN_session_timeout	300
+Multicast_Login	LOGIN_session_timeout	300
+Multicast_Snmp	LOGIN_session_timeout	300
+Junos_old	LOGIN_session_timeout	300
+Junos_new	LOGIN_session_timeout	300
+# If not 0, attempt no login to the router
+Normal	LOGIN_ignore	0
+ALU_REALTIME	LOGIN_ignore	0
+Ignore	LOGIN_ignore	1
+Limit_CRS	LOGIN_ignore	0
+Multicast_Login	LOGIN_ignore	0
+Multicast_Snmp	LOGIN_ignore	1
+Junos_old	LOGIN_ignore	0
+Junos_new	LOGIN_ignore	0
+# If not 0, use Login as the preferred method of router access. Applicable to
+# poll_ldp, when Login or SNMP can be used.
+Normal	LOGIN_preferred	1
+ALU_REALTIME	LOGIN_preferred	1
+Limit_CRS	LOGIN_preferred	1
+Multicast_Login	LOGIN_preferred	1
+Multicast_Snmp	LOGIN_preferred	1
+Junos_old	LOGIN_preferred	1
+Junos_new	LOGIN_preferred	1
+
+# The interval at which the RSVP stats are configured on the routers to
+# be updated.
+# If set to 0 (default) then updates are assumed by MATE to be continuous.
+# If > 0, then for accurate traffic estimates you MUST set:
+#
+# 1. number-of-samples * polling-interval > RSVP_stats_update_interval,
+# 2. polling-interval < RSVP_stats_update_interval.
+#
+# We recommend
+# 1. number-of-samples = 2
+# 2. polling-interval = RSVP_stats_update_interval * 0.6
+#
+# If the real RSVP stats update interval on the router is small compared to
+# time between polls (eg 30 seconds and 300 seconds) then you may choose to set
+# RSVP_stats_update_interval to 0 to ignore.
+Normal	RSVP_stats_update_interval	0
+ALU_REALTIME	RSVP_stats_update_interval	0
+# The interval at which the LDP stats are configured on the routers to
+# be updates. See note above for usage.
+Normal	LDP_stats_update_interval	0
+ALU_REALTIME	LDP_stats_update_interval	0
+# The interval at which Multicast stats are configured on the routers to
+# be updates. See note above for usage.
+Normal	Multicast_stats_update_interval	0
+ALU_REALTIME	Multicast_stats_update_interval	0
+# The interval at which Interface stats are configured on the routers to
+# be updates. See note above for usage.
+Normal	Interface_stats_update_interval	0
+ALU_REALTIME	Interface_stats_update_interval	0
+# The interval at which MAC Accounting stats are configured on the routers to
+# be updates. See note above for usage.
+Normal	MAC_stats_update_interval	0
+ALU_REALTIME	MAC_stats_update_interval	0
+
+# Selection of RSVP MIB Objects per Router. Selections are as follows:
+# 'Default' specifies that the MIB to use is determined by the collection tool
+# logic, 'Method1' specifies that the MIB to use is 1.3.6.1.4.1.2636.3.2.5.1.28
+# (mplsLspInfoAggrOctets), 'Method2' specifies that the MIB to use is
+# 1.3.6.1.4.1.2636.3.2.3.1.3 (mplsLspOctets)
+Normal	SNMP_RSVP_stats_method	Default
+Junos_new	SNMP_RSVP_stats_method	Method1
+Junos_old	SNMP_RSVP_stats_method	Method2
+
+# Selection of LAG MIB objects for Junos Routers.  Selections are as follows:
+# 'Default' to use .1.2.840.10006.300.43.1.1.2.1.1 (dot3adAggPortListPorts)
+# 'Method1' to use .1.2.840.10006.300.43.1.2.1.1.13 (dot3adAggPortAttachedAggID)
+Normal	SNMP_Junos_LAG_method	Default
+Junos_new	SNMP_Junos_LAG_method	Default
+Junos_old	SNMP_Junos_LAG_method	Default
+
+# Selection of HC (High counter - 64bit) when polling multicast traffic:
+# If 1, use HC. Otherwise, if 0, use non-HC (32-bit counters).
+# Default, if not set is 1 (use HC). 
+Normal	SNMP_Multicast_high_counters	1
+Ignore	SNMP_Multicast_high_counters	0
+Multicast_Login	SNMP_Multicast_high_counters	0
+Multicast_Snmp	SNMP_Multicast_high_counters	1
+Junos_old	SNMP_Multicast_high_counters	1
+Junos_new	SNMP_Multicast_high_counters	1
+

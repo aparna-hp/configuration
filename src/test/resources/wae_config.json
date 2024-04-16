@@ -1,0 +1,534 @@
+{
+	"data": {
+		"cisco-wae:networks": {
+			"network": [{
+					"name": "Demand",
+					"nimo": {
+						"cisco-wae-traffic-demands-nimo:traffic-demands-nimo": {
+							"source-network": "vpn",
+							"demand-mesh-config": {
+								"demand-mesh-steps": [{
+										"name": "3",
+										"step-number": 3,
+										"tool": {
+											"dmds-for-p2mplsps": {
+												"service-class": "a",
+												"advanced": {
+													"p2mplsps-table": "a",
+													"options-file": "a",
+													"log-file": "a"
+												}
+											}
+										}
+									},
+									{
+										"name": "4",
+										"step-number": 4,
+										"tool": {
+											"demand-deduction": {
+												"enabled": false,
+												"fix-demands-with-traffic": true,
+												"demand-upper-bound": "1.0",
+												"remove-zero-bw-demands": true,
+												"zero-bw-tolerance": "1.0",
+												"zero-flow-tolerance": "2.0",
+												"measurements": {
+													"interfaces": true,
+													"interfaces-priority": 2,
+													"lsps": true,
+													"flows": true,
+													"flows-priority": 1
+												},
+												"advanced": {
+													"demands-table": "a",
+													"fix-demands-table": "a",
+													"report-file": "a",
+													"traffic-level": "a",
+													"scale-measurements": ["a"],
+													"max-percent-link-util": "a",
+													"only-tunnel-as": "a",
+													"options-file": "a",
+													"log-file": "a",
+													"computation-time": "a",
+													"warn-unrouted-lsps": true
+												},
+												"verbosity": 60
+											}
+										}
+									},
+									{
+										"name": "5",
+										"step-number": 5,
+										"tool": {
+											"external-executable-nimo": {
+												"network": "igp"
+											}
+										}
+									},
+									{
+										"name": "6",
+										"step-number": 6,
+										"tool": {
+											"copy-demands": {
+												"network": "Demand"
+											}
+										}
+									},
+									{
+										"name": "Lsp_demands",
+										"step-number": 2,
+										"tool": {
+											"dmds-for-lsps": {
+												"service-class": "abc",
+												"advanced": {
+													"lsps-table": "a",
+													"options-file": "a",
+													"log-file": "a"
+												}
+											}
+										}
+									},
+									{
+										"name": "Mesh",
+										"step-number": 1,
+										"tool": {
+											"dmd-mesh-creator": {
+												"enabled": false,
+												"service-class": "abc",
+												"topology": "abc",
+												"advanced": {
+													"source-list": ["1"],
+													"source-nodes": "a",
+													"source-sites": "a",
+													"source-as": "a",
+													"source-endpoints": "a",
+													"dest-nodes": "a",
+													"dest-sites": "a",
+													"dest-as": "a",
+													"dest-endpoints": "a",
+													"demandmesh-table": "a",
+													"out-demandmesh-table": "a",
+													"out-demands-table": "a",
+													"external-AS-interface-endpoints": true,
+													"set-name": "a",
+													"set-tag-list": ["a"],
+													"options-file": "a",
+													"no-global-options": true,
+													"log-file": "a"
+												}
+											}
+										}
+									}
+								]
+							},
+							"connect-timeout": 60
+						}
+					}
+				},
+				{
+					"name": "Igp-network",
+					"cisco-wae-archive:plan-archive": {
+						"archive-dir": "/opt/Igp-archive",
+						"include-netint": true,
+						"cleanup": {
+							"enable": true,
+							"retain-number-of-days": 25
+						}
+					}
+				},
+				{
+					"name": "My-network"
+				},
+				{
+					"name": "bgp",
+					"nimo": {
+						"cisco-wae-topo-bgp-nimo:topo-bgp-nimo": {
+							"source-network": "igp",
+							"network-access": "network-access",
+							"peer-protocol": [{
+								"protocol": "IPV4"
+							}]
+						}
+					}
+				},
+				{
+					"name": "igp",
+					"nimo": {
+						"cisco-wae-topo-igp-nimo:topo-igp-nimo": {
+							"network-access": "network-access",
+							"igp-config": [{
+								"index": 1,
+								"seed-router": "10.225.120.63",
+								"igp-protocol": "ospf",
+								"advanced": {
+									"ospf-area": "all",
+									"ospf-proc-ids": ["1"],
+									"remove-null-proc-ids": false
+								}
+							}]
+						}
+					}
+				},
+				{
+					"name": "inv",
+					"nimo": {
+						"cisco-wae-inventory-nimo:inventory-nimo": {
+							"source-network": "My-network",
+							"network-access": "network-access"
+						}
+					}
+				},
+				{
+					"name": "layout"
+				},
+				{
+					"name": "login-mc",
+					"nimo": {
+						"cisco-wae-multicast-nimo:login-find-multicast-nimo": {
+							"network-access": "network-access",
+							"source-network": "My-network"
+						}
+					}
+				},
+				{
+					"name": "login-poll-mc",
+					"nimo": {
+						"cisco-wae-multicast-nimo:login-poll-multicast-nimo": {
+							"network-access": "network-access",
+							"source-network": "login-mc"
+						}
+					}
+				},
+				{
+					"name": "lsp",
+					"nimo": {
+						"cisco-wae-lsp-snmp-nimo:lsp-snmp-nimo": {
+							"source-network": "bgp",
+							"network-access": "network-access",
+							"get-frr-lsps": true
+						}
+					}
+				},
+				{
+					"name": "netflow",
+					"nimo": {
+						"cisco-wae-netflow-nimo:netflow-nimo": {
+							"source-network": "Demand"
+						}
+					}
+				},
+				{
+					"name": "pc",
+					"nimo": {
+						"cisco-wae-cfg-parse-nimo:cfg-parse-nimo": {
+							"cfg-parse-agent": "pc-agent",
+							"source-network": "lsp"
+						}
+					}
+				},
+				{
+					"name": "snmp-find-mc",
+					"nimo": {
+						"cisco-wae-multicast-nimo:snmp-find-multicast-nimo": {
+							"network-access": "network-access",
+							"source-network": "login-poll-mc"
+						}
+					}
+				},
+				{
+					"name": "snmp-poll-mc",
+					"nimo": {
+						"cisco-wae-multicast-nimo:snmp-poll-multicast-nimo": {
+							"network-access": "network-access",
+							"source-network": "snmp-find-mc"
+						}
+					}
+				},
+				{
+					"name": "traffic_demand",
+					"nimo": {
+						"cisco-wae-traffic-demands-nimo:traffic-demands-nimo": {
+							"source-network": "login-mc",
+							"demand-mesh-config": {
+								"demand-mesh-steps": [{
+									"name": "step1",
+									"step-number": 1,
+									"tool": {
+										"external-executable-nimo": {
+											"enabled": true,
+											"network": "login-mc"
+										}
+									}
+								}]
+							}
+						}
+					}
+				},
+				{
+					"name": "vpn",
+					"nimo": {
+						"cisco-wae-topo-vpn-nimo:topo-vpn-nimo": {
+							"source-network": "bgp",
+							"network-access": "network-access",
+							"vpn-types": [{
+								"vpn-type": "L3VPN"
+							}]
+						}
+					}
+				}
+			]
+		},
+		"cisco-wae:wae": {
+			"components": {
+				"cisco-wae-dare:aggregators": {
+					"aging": {
+						"aging-enabled": true,
+						"l3-node-aging-duration": 120,
+						"l3-port-aging-duration": 120,
+						"l3-circuit-aging-duration": 120
+					},
+					"aggregator": [{
+						"destination": "My-network",
+						"sources": {
+							"source": [{
+									"network": "bgp",
+									"nimo": "topo-bgp-nimo"
+								},
+								{
+									"network": "igp",
+									"nimo": "topo-igp-nimo"
+								},
+								{
+									"network": "lsp",
+									"nimo": "lsp-snmp-nimo"
+								},
+								{
+									"network": "pc",
+									"nimo": "cfg-parse-nimo"
+								},
+								{
+									"network": "vpn",
+									"nimo": "topo-vpn-nimo"
+								}
+							]
+						},
+						"dependencies": {
+							"dependency": [{
+									"network": "inv",
+									"nimo": "inventory-nimo"
+								},
+								{
+									"network": "login-mc",
+									"nimo": "login-find-multicast-nimo"
+								},
+								{
+									"network": "login-poll-mc",
+									"nimo": "login-poll-multicast-nimo"
+								},
+								{
+									"network": "netflow",
+									"nimo": "netflow-nimo"
+								},
+								{
+									"network": "snmp-find-mc",
+									"nimo": "snmp-find-multicast-nimo"
+								},
+								{
+									"network": "snmp-poll-mc",
+									"nimo": "snmp-poll-multicast-nimo"
+								},
+								{
+									"network": "traffic_demand",
+									"nimo": "traffic-demands-nimo"
+								}
+							]
+						},
+						"final-network": "Igp-network"
+					}]
+				},
+				"cisco-wae-scheduler:scheduler": {
+					"tasks": {
+						"task": [{
+							"name": "Igp-scheduler",
+							"enabled": false,
+							"action": [{
+									"name": "Igp",
+									"order": 1,
+									"rpc": {
+										"path": "/wae:networks/network{igp}/nimo/topo-igp-nimo:topo-igp-nimo/run-collection",
+										"status-path": ""
+									}
+								},
+								{
+									"name": "bgp",
+									"order": 2,
+									"rpc": {
+										"path": "/wae:networks/network{bgp}/nimo/topo-bgp-nimo:topo-bgp-nimo/run-collection",
+										"status-path": ""
+									}
+								},
+								{
+									"name": "vpn",
+									"order": 3,
+									"rpc": {
+										"path": "/wae:networks/network{vpn}/nimo/vpn:topo-vpn-nimo/run-collection",
+										"status-path": ""
+									}
+								},
+								{
+									"name": "lsp",
+									"order": 4,
+									"rpc": {
+										"path": "/wae:networks/network{lsp}/nimo/lsp-snmp-nimo:lsp-snmp-nimo/run-collection",
+										"status-path": ""
+									}
+								},
+								{
+									"name": "pc",
+									"order": 5,
+									"rpc": {
+										"path": "/wae:networks/network{pc}/nimo/cfg-parse-nimo:cfg-parse-nimo/run-collection",
+										"status-path": ""
+									}
+								},
+								{
+									"name": "inv",
+									"order": 6,
+									"rpc": {
+										"path": "/wae:networks/network{inv}/nimo/inventory-nimo:inventory-nimo/run-inventory",
+										"status-path": ""
+									}
+								},
+								{
+									"name": "mc",
+									"order": 8,
+									"rpc": {
+										"path": "/wae:networks/network{login-mc}/nimo/multicast-nimo:login-find-multicast-nimo/run-collection",
+										"status-path": ""
+									}
+								}
+							],
+							"triggers": {
+								"trigger": [{
+									"name": "Igp-trigger",
+									"cron": {
+										"minute": "*/5",
+										"hour": "*",
+										"day-of-month": "*",
+										"month": "*",
+										"day-of-week": "*"
+									}
+								}]
+							}
+						}]
+					}
+				}
+			},
+			"agents": {
+				"cisco-wae-cfg-parse-agent:cfg-parse": {
+					"cfg-parse": [{
+						"name": "pc-agent",
+						"source-network": "lsp",
+						"network-access": "network-access"
+					}]
+				}
+			},
+			"nimos": {
+				"cisco-wae-nimo:network-access": {
+					"network-access": [{
+						"name": "network-access",
+						"default-auth-group": "auth-group",
+						"default-snmp-group": "snmp-v2-group",
+						"login-protocol": "telnet",
+						"node-access": [{
+							"ip-address": "10.0.255.63",
+							"auth-group": "auth-group",
+							"snmp-group": "snmp-v2-group",
+							"ip-manage": "10.225.120.63"
+						}]
+					}]
+				}
+			}
+		},
+		"tailf-ncs:devices": {
+			"global-settings": {
+				"trace-dir": "./logs"
+			},
+			"authgroups": {
+				"group": [{
+						"name": "auth-group",
+						"default-map": {
+							"remote-name": "cisco",
+							"remote-password": "$9$Q8lnZx0MPrPMcubY8A2dxwquDrrOFDhUHBXEKu7WPag=",
+							"remote-secondary-password": "$9$4jDfJ7uoyWB+5m42NbKyWkdOwoz2rEl/P5jrNBdUpCE="
+						}
+					},
+					{
+						"name": "default",
+						"umap": [{
+								"local-user": "admin",
+								"remote-name": "admin",
+								"remote-password": "$9$uYUiYDP65hwk6YypRH3N74bWfFB8OABvoXpLDTPNUOc="
+							},
+							{
+								"local-user": "oper",
+								"remote-name": "oper",
+								"remote-password": "$9$49xxGCSKqT8fGU4JTXgi+PIlw77tBxoVTs977IXWBxU="
+							}
+						]
+					}
+				],
+				"snmp-group": [{
+						"name": "default",
+						"default-map": {
+							"community-name": "public"
+						},
+						"umap": [{
+							"local-user": "admin",
+							"usm": {
+								"remote-name": "admin",
+								"security-level": "auth-priv",
+								"auth": {
+									"sha": {
+										"remote-password": "$9$T8tG/7AyLN7NNonx2C0fbdb9GnlpXdyCDxDZ0IblHMA="
+									}
+								},
+								"priv": {
+									"aes": {
+										"remote-password": "$9$z8xi+qsSEEE5CfwFIIyqJ9iBap+fxdUWM0aT4X1ld+o="
+									}
+								}
+							}
+						}]
+					},
+					{
+						"name": "snmp-v2-group",
+						"default-map": {
+							"community-name": "cisco"
+						}
+					},
+					{
+						"name": "snmp-v3-group",
+						"default-map": {
+							"community-name": "_snmpv3_",
+							"usm": {
+								"remote-name": "cisco",
+								"security-level": "auth-priv",
+								"auth": {
+									"md5": {
+										"remote-password": "$9$coSbv2bLSj8R4J8OH5Gp+ptBNkT8NTv+SMOMZdR2uTA="
+									}
+								},
+								"priv": {
+									"aes": {
+										"remote-password": "$9$TLiQLQZQc+Azmhd33Dpg0rSorFHj7wB3mkeIuCl/1tI="
+									}
+								}
+							}
+						}
+					}
+				]
+			}
+		}
+	}
+}

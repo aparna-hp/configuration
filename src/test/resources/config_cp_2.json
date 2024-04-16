@@ -1,0 +1,917 @@
+{
+  "snmpGroupDataList": [
+    {
+      "snmpType": "SNMPv2c",
+      "securityLevel": null,
+      "username": null,
+      "authenticationProtocol": null,
+      "authenticationPassword": null,
+      "encryptionProtocol": null,
+      "encryptionPassword": null,
+      "roCommunity": "cisco",
+      "updateDate": [
+        2024,
+        2,
+        9
+      ],
+      "id": 1,
+      "name": "reg_snmp_v2"
+    },
+    {
+      "snmpType": "SNMPv2c",
+      "securityLevel": null,
+      "username": null,
+      "authenticationProtocol": null,
+      "authenticationPassword": null,
+      "encryptionProtocol": null,
+      "encryptionPassword": null,
+      "roCommunity": "cisco",
+      "updateDate": [
+        2024,
+        2,
+        13
+      ],
+      "id": 3,
+      "name": "phy_snmp_grp"
+    }
+  ],
+  "authGroupDataList": [
+    {
+      "updateDate": [
+        2024,
+        2,
+        9
+      ],
+      "id": 2,
+      "name": "reg_telnet_auth_grp",
+      "loginType": "TELNET",
+      "username": "cisco",
+      "password": "cisco",
+      "confirmPassword": "cisco"
+    },
+    {
+      "updateDate": [
+        2024,
+        2,
+        13
+      ],
+      "id": 3,
+      "name": "phy_auth_grp",
+      "loginType": "TELNET",
+      "username": "cisco",
+      "password": "cisco123",
+      "confirmPassword": "cisco123"
+    }
+  ],
+  "nodeProfileDataList": [
+    {
+      "updateDate": [
+        2024,
+        2,
+        9
+      ],
+      "id": 1,
+      "name": "reg_telnet_v2_np",
+      "defaultAuthGroup": "reg_telnet_auth_grp",
+      "defaultSnmpGroup": "reg_snmp_v2",
+      "useNodeListAsIncludeFilter": false,
+      "nodeList": [
+        {
+          "nodeIp": "1.1.6.1",
+          "nodeManagementIp": "172.16.1.6",
+          "authGroupName": "reg_telnet_auth_grp",
+          "snmpGroupName": "reg_snmp_v2",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 6
+        },
+        {
+          "nodeIp": "1.1.4.1",
+          "nodeManagementIp": "172.16.1.4",
+          "authGroupName": "reg_telnet_auth_grp",
+          "snmpGroupName": "reg_snmp_v2",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 4
+        },
+        {
+          "nodeIp": "1.1.12.1",
+          "nodeManagementIp": "172.16.1.12",
+          "authGroupName": "reg_telnet_auth_grp",
+          "snmpGroupName": "reg_snmp_v2",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 12
+        },
+        {
+          "nodeIp": "1.1.14.1",
+          "nodeManagementIp": "172.16.1.14",
+          "authGroupName": "reg_telnet_auth_grp",
+          "snmpGroupName": "reg_snmp_v2",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 14
+        },
+        {
+          "nodeIp": "1.1.2.1",
+          "nodeManagementIp": "172.16.1.2",
+          "authGroupName": "reg_telnet_auth_grp",
+          "snmpGroupName": "reg_snmp_v2",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 2
+        },
+        {
+          "nodeIp": "1.1.10.1",
+          "nodeManagementIp": "172.16.1.10",
+          "authGroupName": "reg_telnet_auth_grp",
+          "snmpGroupName": "reg_snmp_v2",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 10
+        },
+        {
+          "nodeIp": "1.1.11.1",
+          "nodeManagementIp": "172.16.1.11",
+          "authGroupName": "reg_telnet_auth_grp",
+          "snmpGroupName": "reg_snmp_v2",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 11
+        },
+        {
+          "nodeIp": "1.1.8.1",
+          "nodeManagementIp": "172.16.1.8",
+          "authGroupName": "reg_telnet_auth_grp",
+          "snmpGroupName": "reg_snmp_v2",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 8
+        },
+        {
+          "nodeIp": "1.1.7.1",
+          "nodeManagementIp": "172.16.1.7",
+          "authGroupName": "reg_telnet_auth_grp",
+          "snmpGroupName": "reg_snmp_v2",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 7
+        },
+        {
+          "nodeIp": "1.1.9.1",
+          "nodeManagementIp": "172.16.1.9",
+          "authGroupName": "reg_telnet_auth_grp",
+          "snmpGroupName": "reg_snmp_v2",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 9
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "172.16.1.1",
+          "authGroupName": "reg_telnet_auth_grp",
+          "snmpGroupName": "reg_snmp_v2",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 1
+        },
+        {
+          "nodeIp": "1.1.5.1",
+          "nodeManagementIp": "172.16.1.5",
+          "authGroupName": "reg_telnet_auth_grp",
+          "snmpGroupName": "reg_snmp_v2",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 5
+        },
+        {
+          "nodeIp": "1.1.13.1",
+          "nodeManagementIp": "172.16.1.13",
+          "authGroupName": "reg_telnet_auth_grp",
+          "snmpGroupName": "reg_snmp_v2",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 13
+        },
+        {
+          "nodeIp": "1.1.3.1",
+          "nodeManagementIp": "172.16.1.3",
+          "authGroupName": "reg_telnet_auth_grp",
+          "snmpGroupName": "reg_snmp_v2",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 3
+        }
+      ],
+      "nodeFilter": []
+    },
+    {
+      "updateDate": [
+        2024,
+        2,
+        13
+      ],
+      "id": 2,
+      "name": "phy_net_profile",
+      "defaultAuthGroup": "phy_auth_grp",
+      "defaultSnmpGroup": "phy_snmp_grp",
+      "useNodeListAsIncludeFilter": false,
+      "nodeList": [
+        {
+          "nodeIp": "1.1.2.1",
+          "nodeManagementIp": "10.104.112.62",
+          "authGroupName": "phy_auth_grp",
+          "snmpGroupName": "phy_snmp_grp",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 21
+        },
+        {
+          "nodeIp": "1.1.7.1",
+          "nodeManagementIp": "10.104.112.55",
+          "authGroupName": "phy_auth_grp",
+          "snmpGroupName": "phy_snmp_grp",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 26
+        },
+        {
+          "nodeIp": "1.1.5.1",
+          "nodeManagementIp": "10.104.112.64",
+          "authGroupName": "phy_auth_grp",
+          "snmpGroupName": "phy_snmp_grp",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 24
+        },
+        {
+          "nodeIp": "1.1.10.1",
+          "nodeManagementIp": "10.104.112.65",
+          "authGroupName": "phy_auth_grp",
+          "snmpGroupName": "phy_snmp_grp",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 16
+        },
+        {
+          "nodeIp": "1.1.6.1",
+          "nodeManagementIp": "10.104.112.61",
+          "authGroupName": "phy_auth_grp",
+          "snmpGroupName": "phy_snmp_grp",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 25
+        },
+        {
+          "nodeIp": "1.1.8.1",
+          "nodeManagementIp": "10.104.112.54",
+          "authGroupName": "phy_auth_grp",
+          "snmpGroupName": "phy_snmp_grp",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 27
+        },
+        {
+          "nodeIp": "1.1.9.1",
+          "nodeManagementIp": "10.104.112.68",
+          "authGroupName": "phy_auth_grp",
+          "snmpGroupName": "phy_snmp_grp",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 28
+        },
+        {
+          "nodeIp": "1.1.4.1",
+          "nodeManagementIp": "10.104.112.56",
+          "authGroupName": "phy_auth_grp",
+          "snmpGroupName": "phy_snmp_grp",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 23
+        },
+        {
+          "nodeIp": "1.1.14.1",
+          "nodeManagementIp": "10.104.112.57",
+          "authGroupName": "phy_auth_grp",
+          "snmpGroupName": "phy_snmp_grp",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 20
+        },
+        {
+          "nodeIp": "1.1.12.1",
+          "nodeManagementIp": "10.104.112.66",
+          "authGroupName": "phy_auth_grp",
+          "snmpGroupName": "phy_snmp_grp",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 18
+        },
+        {
+          "nodeIp": "1.1.3.1",
+          "nodeManagementIp": "10.104.112.60",
+          "authGroupName": "phy_auth_grp",
+          "snmpGroupName": "phy_snmp_grp",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 22
+        },
+        {
+          "nodeIp": "1.1.1.1",
+          "nodeManagementIp": "10.104.112.63",
+          "authGroupName": "phy_auth_grp",
+          "snmpGroupName": "phy_snmp_grp",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 15
+        },
+        {
+          "nodeIp": "1.1.11.1",
+          "nodeManagementIp": "10.104.112.58",
+          "authGroupName": "phy_auth_grp",
+          "snmpGroupName": "phy_snmp_grp",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 17
+        },
+        {
+          "nodeIp": "1.1.13.1",
+          "nodeManagementIp": "10.104.112.59",
+          "authGroupName": "phy_auth_grp",
+          "snmpGroupName": "phy_snmp_grp",
+          "snmpGroupMismatch": false,
+          "authGroupMismatch": false,
+          "id": 19
+        }
+      ],
+      "nodeFilter": []
+    }
+  ],
+  "agentDataList": [
+    {
+      "updateDate": [
+        2024,
+        2,
+        9
+      ],
+      "id": 1,
+      "name": "reg_srpce_agent13",
+      "type": "SR_PCE_AGENT",
+      "params": "{\"authGroup\":null,\"username\":\"cisco\",\"password\":null,\"encodedPassword\":\"cYECb4rNBy0H3Pf3JSlwTA==\",\"enabled\":true,\"xtcHostIP\":\"172.16.1.13\",\"xtcRestPort\":8080,\"authenticationType\":\"BASIC\",\"batchSize\":1000,\"maxLspHistory\":0,\"keepAliveInterval\":10,\"connectionTimeoutInterval\":60,\"connectionRetryCount\":3,\"keepAliveThreshold\":2,\"netRecorderMode\":\"OFF\",\"eventBufferingEnabled\":true,\"playbackEventsDelay\":0,\"eventsBufferTime\":30,\"poolSize\":1,\"topologyCollection\":\"COLLECTION_AND_SUBSCRIPTION\",\"lspCollection\":\"COLLECTION_AND_SUBSCRIPTION\"}"
+    },
+    {
+      "updateDate": [
+        2024,
+        2,
+        13
+      ],
+      "id": 3,
+      "name": "reg_osrpce_col1",
+      "type": "TRAFFIC_POLLER",
+      "params": "{\"networkId\":4}"
+    },
+    {
+      "updateDate": [
+        2024,
+        2,
+        13
+      ],
+      "id": 2,
+      "name": "reg_srpce_agent14",
+      "type": "SR_PCE_AGENT",
+      "params": "{\"authGroup\":null,\"username\":\"cisco\",\"password\":null,\"encodedPassword\":\"cYECb4rNBy0H3Pf3JSlwTA==\",\"enabled\":false,\"xtcHostIP\":\"172.16.1.14\",\"xtcRestPort\":8080,\"authenticationType\":\"BASIC\",\"batchSize\":1000,\"maxLspHistory\":0,\"keepAliveInterval\":10,\"connectionTimeoutInterval\":60,\"connectionRetryCount\":3,\"keepAliveThreshold\":2,\"netRecorderMode\":\"OFF\",\"eventBufferingEnabled\":true,\"playbackEventsDelay\":0,\"eventsBufferTime\":30,\"poolSize\":1,\"topologyCollection\":\"COLLECTION_AND_SUBSCRIPTION\",\"lspCollection\":\"COLLECTION_AND_SUBSCRIPTION\"}"
+    },
+    {
+      "updateDate": [
+        2024,
+        2,
+        13
+      ],
+      "id": 4,
+      "name": "phy_srpce_host",
+      "type": "SR_PCE_AGENT",
+      "params": "{\"authGroup\":null,\"username\":\"cisco\",\"password\":null,\"encodedPassword\":\"L23wPu4iV4SVEfwAhCfGfQ==\",\"enabled\":true,\"xtcHostIP\":\"10.104.112.59\",\"xtcRestPort\":8080,\"authenticationType\":\"BASIC\",\"batchSize\":1000,\"maxLspHistory\":0,\"keepAliveInterval\":10,\"connectionTimeoutInterval\":60,\"connectionRetryCount\":3,\"keepAliveThreshold\":2,\"netRecorderMode\":\"OFF\",\"eventBufferingEnabled\":true,\"playbackEventsDelay\":0,\"eventsBufferTime\":30,\"poolSize\":1,\"topologyCollection\":\"COLLECTION_AND_SUBSCRIPTION\",\"lspCollection\":\"COLLECTION_AND_SUBSCRIPTION\"}"
+    },
+    {
+      "updateDate": [
+        2024,
+        2,
+        13
+      ],
+      "id": 6,
+      "name": "netflow_agent",
+      "type": "NETFLOW_AGENT",
+      "params": "{\"interval\":900,\"bgp\":true,\"flowSize\":\"medium\",\"extraAggregation\":[],\"nodeFlowConfigs\":[{\"name\":\"R1-PE1\",\"samplingRate\":1024,\"flowSourceIP\":\"1.1.1.1\",\"bGPSourceIP\":\"172.16.1.1\",\"bGPPassword\":\"bgp_password\"}]}"
+    },
+    {
+      "updateDate": [
+        2024,
+        2,
+        13
+      ],
+      "id": 5,
+      "name": "phy_srpce_col_1",
+      "type": "TRAFFIC_POLLER",
+      "params": "{\"networkId\":15}"
+    }
+  ],
+  "networkDataList": [
+    {
+      "nodeProfileData": {
+        "updateDate": null,
+        "id": 1,
+        "name": "reg_telnet_v2_np",
+        "useNodeListAsIncludeFilter": false
+      },
+      "id": 1,
+      "name": "reg_ospf_col_1",
+      "draft": false,
+      "draftConfig": "",
+      "collectors": [
+        {
+          "id": 1,
+          "name": "IGP-reg_ospf_col_1",
+          "type": "TOPO_IGP",
+          "consolidationType": "DARE",
+          "params": "{\"igpConfigs\":[{\"igpIndex\":1234568,\"seedRouter\":\"172.16.1.3\",\"igpProtocol\":\"OSPF\",\"advanced\":{\"backupRouter\":null,\"getSegment\":true,\"isisLevel\":\"2\",\"ospfArea\":\"all\",\"ospfProcessIds\":[101],\"isisProcessIds\":[],\"removeNullProcessId\":false,\"runIGPOffline\":\"OFF\",\"nodeTag\":null,\"loginConfig\":{\"encodedTelnetPassword\":null,\"forceLoginPlatform\":null,\"fallbackLoginPlatform\":null,\"sendEnablePassword\":false,\"telnetUserName\":null,\"telnetPassword\":null},\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}],\"collectInterfaces\":true,\"advanced\":{\"nodes\":{\"qosNodeFilterList\":[],\"performanceData\":true,\"removeNodeSuffix\":[],\"discoverQosQueue\":true,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":60}},\"interfaces\":{\"findParallelLinks\":true,\"ipGuessing\":\"SAFE\",\"discoverLags\":true,\"lagPortMatch\":\"GUESS\",\"circuitCleanup\":false,\"copyDescription\":true,\"collectPhysicalPort\":true,\"minIPGuessPrefixLength\":0,\"minPrefixLength\":30,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":60}}}}",
+          "timeout": 60,
+          "sourceCollector": null,
+          "agents": []
+        },
+        {
+          "id": 9,
+          "name": "LSP-reg_ospf_col_1",
+          "type": "LSP_SNMP",
+          "consolidationType": "DARE",
+          "params": "{\"getFrrLsps\":true,\"advanced\":{\"useCalculatedHops\":false,\"findActualPaths\":true,\"getExtras\":false,\"useSignaledName\":false,\"autoBw\":false,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}",
+          "timeout": 60,
+          "sourceCollector": {
+            "id": 1,
+            "name": "IGP-reg_ospf_col_1",
+            "type": "TOPO_IGP"
+          },
+          "agents": []
+        }
+      ]
+    },
+    {
+      "nodeProfileData": {
+        "updateDate": null,
+        "id": 1,
+        "name": "reg_telnet_v2_np",
+        "useNodeListAsIncludeFilter": false
+      },
+      "id": 2,
+      "name": "reg_osrpce_col1",
+      "draft": false,
+      "draftConfig": "",
+      "collectors": [
+        {
+          "id": 2,
+          "name": "SR-PCE-reg_osrpce_col1",
+          "type": "TOPO_BGPLS_XTC",
+          "consolidationType": "DARE",
+          "params": "{\"xtcHost\":null,\"backupXtcHost\":null,\"primarySrPceAgent\":1,\"secondarySrPceAgent\":2,\"asn\":100,\"igpProtocol\":\"ISIS\",\"extendedTopologyDiscovery\":true,\"reactiveEnabled\":true,\"enable-trigger-collection\":true,\"advanced\":{\"SR_PCE\":{\"singleEndedEbgpDiscovery\":true},\"nodes\":{\"qosNodeFilterList\":[],\"performanceData\":true,\"removeNodeSuffix\":[],\"discoverQosQueue\":true,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}},\"interfaces\":{\"findParallelLinks\":true,\"ipGuessing\":\"SAFE\",\"discoverLags\":true,\"lagPortMatch\":\"GUESS\",\"circuitCleanup\":false,\"copyDescription\":true,\"collectPhysicalPort\":true,\"minIPGuessPrefixLength\":0,\"minPrefixLength\":30,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}}",
+          "timeout": 60,
+          "sourceCollector": null,
+          "agents": [
+            {
+              "updateDate": [
+                2024,
+                2,
+                9
+              ],
+              "id": 1,
+              "name": "reg_srpce_agent13",
+              "type": "SR_PCE_AGENT"
+            },
+            {
+              "updateDate": [
+                2024,
+                2,
+                13
+              ],
+              "id": 2,
+              "name": "reg_srpce_agent14",
+              "type": "SR_PCE_AGENT"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Config-Parsing-reg_osrpce_col1",
+          "type": "CONFIG_PARSE",
+          "consolidationType": "DARE",
+          "params": "{\"getConfig\":{\"enable\":true,\"loginConfig\":{\"encodedTelnetPassword\":null,\"forceLoginPlatform\":null,\"fallbackLoginPlatform\":null,\"sendEnablePassword\":false,\"telnetUserName\":null,\"telnetPassword\":null},\"timeout\":60,\"debug\":{\"loginRecordMode\":\"OFF\",\"verbosity\":30}},\"parseConfig\":{\"igpProtocol\":\"ISIS\",\"isisLevel\":\"2\",\"ospfArea\":\"all\",\"asn\":null,\"includeObjects\":[\"LAG\"],\"parseConfigAdvanced\":{\"circuitMatch\":\"SAME_IGP\",\"lagPortMatch\":\"GUESS\",\"ospfProcessIds\":[],\"isisProcessIds\":[],\"selectLoopBackInt\":0,\"resolveReferences\":true,\"useMultiThreading\":false,\"filterShowCommands\":false,\"buildTopology\":true,\"sharedMedia\":true,\"advancedToolOptions\":[],\"timeout\":60,\"debug\":{\"verbosity\":30}}}}",
+          "timeout": 60,
+          "sourceCollector": {
+            "id": 2,
+            "name": "SR-PCE-reg_osrpce_col1",
+            "type": "TOPO_BGPLS_XTC"
+          },
+          "agents": []
+        },
+        {
+          "id": 8,
+          "name": "BGP-reg_osrpce_col1",
+          "type": "TOPO_BGP",
+          "consolidationType": "DARE",
+          "params": "{\"advanced\":{\"protocol\":[\"IPV4\",\"IPV6\"],\"minPrefixLength\":24,\"minIPv6PrefixLength\":64,\"loginToRouterForMultihop\":true,\"loginConfig\":{\"encodedTelnetPassword\":null,\"forceLoginPlatform\":null,\"fallbackLoginPlatform\":null,\"sendEnablePassword\":false,\"telnetUserName\":null,\"telnetPassword\":null},\"findInternalASNLinks\":false,\"findNonIPExitInterface\":false,\"findInternalExitInterface\":false,\"getMacAddress\":false,\"useDNS\":false,\"forceCheckAll\":false,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30,\"loginRecordMode\":\"OFF\"}}}",
+          "timeout": 60,
+          "sourceCollector": {
+            "id": 2,
+            "name": "SR-PCE-reg_osrpce_col1",
+            "type": "TOPO_BGPLS_XTC"
+          },
+          "agents": []
+        },
+        {
+          "id": 7,
+          "name": "VPN-reg_osrpce_col1",
+          "type": "TOPO_VPN",
+          "consolidationType": "DARE",
+          "params": "{\"vpnType\":[\"VPWS\",\"L3VPN\"],\"advanced\":{\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}",
+          "timeout": 60,
+          "sourceCollector": {
+            "id": 2,
+            "name": "SR-PCE-reg_osrpce_col1",
+            "type": "TOPO_BGPLS_XTC"
+          },
+          "agents": []
+        },
+        {
+          "id": 3,
+          "name": "LSP-reg_osrpce_col1",
+          "type": "LSP_PCEP_XTC",
+          "consolidationType": "DARE",
+          "params": "{\"reactiveNetwork\":{\"enable\":true},\"advanced\":{\"rsvpUseSignaledName\":false,\"srUseSignaledName\":true,\"srAddIndex\":true,\"connectTimeout\":60}}",
+          "timeout": 60,
+          "sourceCollector": {
+            "id": 2,
+            "name": "SR-PCE-reg_osrpce_col1",
+            "type": "TOPO_BGPLS_XTC"
+          },
+          "agents": [
+            {
+              "updateDate": [
+                2024,
+                2,
+                9
+              ],
+              "id": 1,
+              "name": "reg_srpce_agent13",
+              "type": "SR_PCE_AGENT"
+            },
+            {
+              "updateDate": [
+                2024,
+                2,
+                13
+              ],
+              "id": 2,
+              "name": "reg_srpce_agent14",
+              "type": "SR_PCE_AGENT"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Inventory-reg_osrpce_col1",
+          "type": "INVENTORY",
+          "consolidationType": "DARE",
+          "params": "{\"advanced\":{\"actionTimeout\":30,\"getInventoryOptions\":{\"loginAllowed\":true,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}},\"buildInventoryOptions\":{\"debug\":{\"verbosity\":30},\"excludeFile\":null,\"guessTemplateIfNoMatch\":false,\"templateFile\":null,\"hardwareSpecFile\":null}}}",
+          "timeout": 30,
+          "sourceCollector": {
+            "id": 2,
+            "name": "SR-PCE-reg_osrpce_col1",
+            "type": "TOPO_BGPLS_XTC"
+          },
+          "agents": []
+        },
+        {
+          "id": 4,
+          "name": "Traffic-Collection-reg_osrpce_col1",
+          "type": "TRAFFIC_POLL",
+          "consolidationType": "SAGE",
+          "params": "{\"enabled\":false,\"interfaceTraffic\":{\"enabled\":true,\"period\":60,\"qosEnabled\":true,\"vpnEnabled\":true},\"lspTraffic\":{\"enabled\":true,\"period\":60},\"macTraffic\":{\"enabled\":true,\"period\":60},\"snmpTrafficPoller\":{\"minWindowLengthStats\":300,\"maxWindowLengthStats\":450,\"rawCounterTTL\":60,\"discardOverCapacity\":true,\"netRecorderFileMaxSize\":10,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}",
+          "timeout": 60,
+          "sourceCollector": {
+            "id": 0,
+            "name": "DARE",
+            "type": "DARE"
+          },
+          "agents": [
+            {
+              "updateDate": [
+                2024,
+                2,
+                13
+              ],
+              "id": 3,
+              "name": "reg_osrpce_col1",
+              "type": "TRAFFIC_POLLER"
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "name": "Demand-Deduction-reg_osrpce_col1",
+          "type": "TRAFFIC_DEMAND",
+          "consolidationType": "SAGE",
+          "params": "{\"demandSteps\":[{\"id\":10,\"name\":\"dmd_mesh_creator\",\"stepNumber\":1,\"tool\":{\"demand-deduction\":{\"fixDemandsWithTraffic\":false,\"demandUpperBound\":0.0,\"removeZeroBwDemands\":true,\"zeroBwTolerance\":0.0,\"zeroFlowTolerance\":0.0,\"measurements\":{\"nodes\":true,\"nodesPriority\":2,\"interfaces\":true,\"interfacesPriority\":1,\"lsps\":true,\"lspsPriority\":2,\"flows\":true,\"flowsPriority\":2},\"advanced\":{\"demandsTable\":\"\",\"fixDemandsTable\":\"\",\"fixMulticastDemands\":false,\"reportFile\":\"\",\"trafficLevel\":\"\",\"scaleMeasurements\":[],\"measErrors\":\"SPREAD\",\"maxPercentLinkUtil\":\"\",\"onlyTunnelAs\":\"\",\"optionsFile\":null,\"noGlobalOptions\":false,\"suppressProgress\":false,\"computationTime\":10,\"warnDynamicLsps\":false,\"warnUnroutedLsps\":false,\"debug\":{\"verbosity\":30}}}},\"enabled\":true}]}",
+          "timeout": null,
+          "sourceCollector": {
+            "id": 4,
+            "name": "Traffic-Collection-reg_osrpce_col1",
+            "type": "TRAFFIC_POLL"
+          },
+          "agents": []
+        }
+      ]
+    },
+    {
+      "nodeProfileData": {
+        "updateDate": null,
+        "id": 2,
+        "name": "phy_net_profile",
+        "useNodeListAsIncludeFilter": false
+      },
+      "id": 3,
+      "name": "phy_srpce_col_1",
+      "draft": false,
+      "draftConfig": "",
+      "collectors": [
+        {
+          "id": 14,
+          "name": "LSP-phy_srpce_col_1",
+          "type": "LSP_PCEP_XTC",
+          "consolidationType": "DARE",
+          "params": "{\"reactiveNetwork\":{\"enable\":true},\"advanced\":{\"rsvpUseSignaledName\":true,\"srUseSignaledName\":true,\"srAddIndex\":true,\"connectTimeout\":60}}",
+          "timeout": 60,
+          "sourceCollector": {
+            "id": 17,
+            "name": "SR-PCE-phy_srpce_col_1",
+            "type": "TOPO_BGPLS_XTC"
+          },
+          "agents": [
+            {
+              "updateDate": [
+                2024,
+                2,
+                13
+              ],
+              "id": 4,
+              "name": "phy_srpce_host",
+              "type": "SR_PCE_AGENT"
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "name": "Traffic-Collection-phy_srpce_col_1",
+          "type": "TRAFFIC_POLL",
+          "consolidationType": "SAGE",
+          "params": "{\"enabled\":true,\"interfaceTraffic\":{\"enabled\":true,\"period\":60,\"qosEnabled\":true,\"vpnEnabled\":true},\"lspTraffic\":{\"enabled\":true,\"period\":60},\"macTraffic\":{\"enabled\":true,\"period\":60},\"snmpTrafficPoller\":{\"minWindowLengthStats\":300,\"maxWindowLengthStats\":450,\"rawCounterTTL\":60,\"discardOverCapacity\":true,\"netRecorderFileMaxSize\":10,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}",
+          "timeout": 60,
+          "sourceCollector": {
+            "id": 0,
+            "name": "DARE",
+            "type": "DARE"
+          },
+          "agents": [
+            {
+              "updateDate": [
+                2024,
+                2,
+                13
+              ],
+              "id": 5,
+              "name": "phy_srpce_col_1",
+              "type": "TRAFFIC_POLLER"
+            }
+          ]
+        },
+        {
+          "id": 18,
+          "name": "Demand-Deduction-phy_srpce_col_1",
+          "type": "TRAFFIC_DEMAND",
+          "consolidationType": "SAGE",
+          "params": "{\"demandSteps\":[{\"id\":null,\"name\":\"dmd_mesh_creator\",\"stepNumber\":1,\"tool\":{\"dmd-mesh-creator\":{\"bothDirections\":true,\"deleteSameName\":true,\"serviceClass\":null,\"topology\":null,\"advanced\":{\"sourceList\":[],\"sourceNodes\":null,\"sourceSites\":null,\"sourceAs\":null,\"sourceEndpoints\":null,\"destNodes\":null,\"destSites\":null,\"destAs\":null,\"destEndpoints\":null,\"demandmesh-table\":null,\"demandmeshTable\":null,\"outDemandmeshTable\":null,\"outDemandsTable\":null,\"externalAsInterface-endpoints\":true,\"externalAsInterfaceEndpoints\":true,\"respectAsRelationships\":true,\"externalMesh\":\"RESPECT\",\"setName\":null,\"setTagList\":null,\"optionsFile\":null,\"noGlobalOptions\":false,\"destEqualSource\":false,\"destList\":[],\"destination\":\"\",\"includeDemandToSelf\":true,\"suppressProgress\":false,\"debug\":{\"verbosity\":30}}}},\"enabled\":false}]}",
+          "timeout": null,
+          "sourceCollector": {
+            "id": 15,
+            "name": "Traffic-Collection-phy_srpce_col_1",
+            "type": "TRAFFIC_POLL"
+          },
+          "agents": []
+        },
+        {
+          "id": 16,
+          "name": "BGP-phy_srpce_col_1",
+          "type": "TOPO_BGP",
+          "consolidationType": "DARE",
+          "params": "{\"advanced\":{\"protocol\":[\"IPV4\",\"IPV6\"],\"minPrefixLength\":24,\"minIPv6PrefixLength\":64,\"loginToRouterForMultihop\":true,\"loginConfig\":{\"encodedTelnetPassword\":null,\"forceLoginPlatform\":null,\"fallbackLoginPlatform\":null,\"sendEnablePassword\":false,\"telnetUserName\":null,\"telnetPassword\":null},\"findInternalASNLinks\":false,\"findNonIPExitInterface\":false,\"findInternalExitInterface\":false,\"getMacAddress\":false,\"useDNS\":false,\"forceCheckAll\":false,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30,\"loginRecordMode\":\"OFF\"}}}",
+          "timeout": 60,
+          "sourceCollector": {
+            "id": 17,
+            "name": "SR-PCE-phy_srpce_col_1",
+            "type": "TOPO_BGPLS_XTC"
+          },
+          "agents": []
+        },
+        {
+          "id": 17,
+          "name": "SR-PCE-phy_srpce_col_1",
+          "type": "TOPO_BGPLS_XTC",
+          "consolidationType": "DARE",
+          "params": "{\"xtcHost\":null,\"backupXtcHost\":null,\"primarySrPceAgent\":4,\"secondarySrPceAgent\":null,\"asn\":100,\"igpProtocol\":\"ISIS\",\"extendedTopologyDiscovery\":true,\"reactiveEnabled\":true,\"enable-trigger-collection\":true,\"advanced\":{\"SR_PCE\":{\"singleEndedEbgpDiscovery\":true},\"nodes\":{\"qosNodeFilterList\":[],\"performanceData\":true,\"removeNodeSuffix\":[],\"discoverQosQueue\":true,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}},\"interfaces\":{\"findParallelLinks\":true,\"ipGuessing\":\"SAFE\",\"discoverLags\":true,\"lagPortMatch\":\"GUESS\",\"circuitCleanup\":false,\"copyDescription\":true,\"collectPhysicalPort\":true,\"minIPGuessPrefixLength\":0,\"minPrefixLength\":30,\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}}",
+          "timeout": 60,
+          "sourceCollector": null,
+          "agents": [
+            {
+              "updateDate": [
+                2024,
+                2,
+                13
+              ],
+              "id": 4,
+              "name": "phy_srpce_host",
+              "type": "SR_PCE_AGENT"
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "name": "VPN-phy_srpce_col_1",
+          "type": "TOPO_VPN",
+          "consolidationType": "DARE",
+          "params": "{\"vpnType\":[\"VPWS\",\"L3VPN\"],\"advanced\":{\"timeout\":60,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}}}",
+          "timeout": 60,
+          "sourceCollector": {
+            "id": 17,
+            "name": "SR-PCE-phy_srpce_col_1",
+            "type": "TOPO_BGPLS_XTC"
+          },
+          "agents": []
+        },
+        {
+          "id": 13,
+          "name": "Inventory-phy_srpce_col_1",
+          "type": "INVENTORY",
+          "consolidationType": "DARE",
+          "params": "{\"advanced\":{\"actionTimeout\":30,\"getInventoryOptions\":{\"loginAllowed\":true,\"debug\":{\"netRecorder\":\"OFF\",\"verbosity\":30}},\"buildInventoryOptions\":{\"debug\":{\"verbosity\":30},\"excludeFile\":null,\"guessTemplateIfNoMatch\":false,\"templateFile\":null,\"hardwareSpecFile\":null}}}",
+          "timeout": 30,
+          "sourceCollector": {
+            "id": 17,
+            "name": "SR-PCE-phy_srpce_col_1",
+            "type": "TOPO_BGPLS_XTC"
+          },
+          "agents": []
+        }
+      ]
+    }
+  ],
+  "schedulerConfigDataList": [
+    {
+      "id": 1,
+      "networkId": 1,
+      "networkName": "reg_ospf_col_1",
+      "name": "Schedule",
+      "cronExpression": null,
+      "runNow": true,
+      "taskConfigDataList": [
+        {
+          "taskName": "IGP-reg_ospf_col_1",
+          "collectorId": 1,
+          "collectorName": "IGP-reg_ospf_col_1",
+          "collectorType": "TOPO_IGP",
+          "collect": true,
+          "aggreagate": true,
+          "archive": true
+        }
+      ],
+      "active": true
+    },
+    {
+      "id": 4,
+      "networkId": 2,
+      "networkName": "reg_osrpce_col1",
+      "name": "Schedule",
+      "cronExpression": null,
+      "runNow": true,
+      "taskConfigDataList": [
+        {
+          "taskName": "Demand-Deduction-reg_osrpce_col1_DEMAND_DEDUCTION",
+          "collectorId": 10,
+          "collectorName": "Demand-Deduction-reg_osrpce_col1_DEMAND_DEDUCTION",
+          "collectorType": "DEMAND_DEDUCTION",
+          "collect": true,
+          "aggreagate": false,
+          "archive": false
+        },
+        {
+          "taskName": "Demand-Deduction-reg_osrpce_col1_AGGREGATE",
+          "collectorId": 11,
+          "collectorName": "Demand-Deduction-reg_osrpce_col1",
+          "collectorType": "TRAFFIC_DEMAND",
+          "collect": false,
+          "aggreagate": true,
+          "archive": true
+        },
+        {
+          "taskName": "SAGE_Archive_task",
+          "collectorId": null,
+          "collectorName": null,
+          "collectorType": "SAGE",
+          "collect": false,
+          "aggreagate": false,
+          "archive": true
+        }
+      ],
+      "active": true
+    },
+    {
+      "id": 8,
+      "networkId": 3,
+      "networkName": "phy_srpce_col_1",
+      "name": "Schedule",
+      "cronExpression": null,
+      "runNow": true,
+      "taskConfigDataList": [
+        {
+          "taskName": "SR-PCE-phy_srpce_col_1",
+          "collectorId": 17,
+          "collectorName": "SR-PCE-phy_srpce_col_1",
+          "collectorType": "TOPO_BGPLS_XTC",
+          "collect": true,
+          "aggreagate": true,
+          "archive": false
+        },
+        {
+          "taskName": "LSP-phy_srpce_col_1",
+          "collectorId": 14,
+          "collectorName": "LSP-phy_srpce_col_1",
+          "collectorType": "LSP_PCEP_XTC",
+          "collect": true,
+          "aggreagate": true,
+          "archive": false
+        },
+        {
+          "taskName": "BGP-phy_srpce_col_1",
+          "collectorId": 16,
+          "collectorName": "BGP-phy_srpce_col_1",
+          "collectorType": "TOPO_BGP",
+          "collect": true,
+          "aggreagate": true,
+          "archive": false
+        },
+        {
+          "taskName": "VPN-phy_srpce_col_1",
+          "collectorId": 12,
+          "collectorName": "VPN-phy_srpce_col_1",
+          "collectorType": "TOPO_VPN",
+          "collect": true,
+          "aggreagate": true,
+          "archive": false
+        },
+        {
+          "taskName": "Inventory-phy_srpce_col_1",
+          "collectorId": 13,
+          "collectorName": "Inventory-phy_srpce_col_1",
+          "collectorType": "INVENTORY",
+          "collect": true,
+          "aggreagate": true,
+          "archive": false
+        },
+        {
+          "taskName": "Traffic-Collection-phy_srpce_col_1",
+          "collectorId": 15,
+          "collectorName": "Traffic-Collection-phy_srpce_col_1",
+          "collectorType": "TRAFFIC_POLL",
+          "collect": true,
+          "aggreagate": true,
+          "archive": false
+        },
+        {
+          "taskName": "Demand-Deduction-phy_srpce_col_1",
+          "collectorId": 18,
+          "collectorName": "Demand-Deduction-phy_srpce_col_1",
+          "collectorType": "TRAFFIC_DEMAND",
+          "collect": true,
+          "aggreagate": true,
+          "archive": false
+        },
+        {
+          "taskName": "SAGE_Archive_task",
+          "collectorId": null,
+          "collectorName": null,
+          "collectorType": "SAGE",
+          "collect": false,
+          "aggreagate": false,
+          "archive": true
+        }
+      ],
+      "active": true
+    }
+  ]
+}

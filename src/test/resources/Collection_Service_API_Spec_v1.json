@@ -1,0 +1,3615 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "OpenAPI definition",
+        "version": "v0"
+    },
+    "servers": [
+        {
+            "url": "https://<host>:<port>/cp/collection-service/",
+            "description": "Generated server url"
+        }
+    ],
+    "paths": {
+        "/api/v1/snmp-groups": {
+            "get": {
+                "tags": [
+                    "snmp-group-controller"
+                ],
+                "summary": "Get all Snmp groups",
+                "operationId": "getAllSnmpGroups",
+                "responses": {
+                    "200": {
+                        "description": "Found the Snmp groups",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SnmpGroupData"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error getting the snmp groups."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "snmp-group-controller"
+                ],
+                "summary": "Update the Snmp group",
+                "operationId": "updateSnmpGroup",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SnmpGroupData"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated the snmp group",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SnmpGroupData"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Snmp group not found"
+                    },
+                    "500": {
+                        "description": "Error updating the Snmp group"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "snmp-group-controller"
+                ],
+                "summary": "Create a new snmp group",
+                "operationId": "createSnmpGroup",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SnmpGroupData"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Snmp group is created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SnmpGroupData"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error creating the snmp group."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "snmp-group-controller"
+                ],
+                "summary": "Delete a Snmp group by its ID",
+                "operationId": "deleteSnmpGroup",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Snmp group is deleted",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SnmpGroupData"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Snmp group not found"
+                    },
+                    "500": {
+                        "description": "Error deleting the snmp group."
+                    }
+                }
+            }
+        },
+        "/api/v1/schedulers": {
+            "get": {
+                "tags": [
+                    "scheduler-controller"
+                ],
+                "summary": "Get the schedulers belonging to the network.",
+                "operationId": "getSchedulersOfNetwork",
+                "parameters": [
+                    {
+                        "name": "networkId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Found the schedulers status for the network",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SchedulerConfigData"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error getting the status of the schedulers."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "scheduler-controller"
+                ],
+                "summary": "Update the scheduler config",
+                "operationId": "updateScheduler",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/SchedulerConfigData"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "500": {
+                        "description": "Error updating the schedulers."
+                    },
+                    "default": {
+                        "description": "default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ApiResponseDetail"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "scheduler-controller"
+                ],
+                "summary": "Create a new scheduler",
+                "operationId": "createScheduler",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/SchedulerConfigData"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "500": {
+                        "description": "Error creating the schedulers."
+                    },
+                    "default": {
+                        "description": "default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ApiResponseDetail"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "scheduler-controller"
+                ],
+                "summary": "Delete a scheduler by its ID",
+                "operationId": "deleteScheduler",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Scheduler is deleted"
+                    },
+                    "404": {
+                        "description": "Scheduler not found"
+                    },
+                    "500": {
+                        "description": "Error deleting the scheduler"
+                    }
+                }
+            }
+        },
+        "/api/v1/schedulers/execute-actions": {
+            "put": {
+                "tags": [
+                    "scheduler-controller"
+                ],
+                "summary": "Execute the scheduler action like execute, pause, resume and abort Job.",
+                "operationId": "runTool",
+                "parameters": [
+                    {
+                        "name": "schedulerId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "actionName",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "EXECUTE_JOB",
+                                "PAUSE_JOB",
+                                "RESUME_JOB",
+                                "ABORT_JOB"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The scheduler action is successful.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "boolean"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Scheduler action not found"
+                    },
+                    "500": {
+                        "description": "Error executing the Scheduler action"
+                    }
+                }
+            }
+        },
+        "/api/v1/node-profiles": {
+            "get": {
+                "tags": [
+                    "node-profile-controller"
+                ],
+                "summary": "Get all Node Profile name and id for landing page",
+                "operationId": "getAllNodeProfile",
+                "responses": {
+                    "200": {
+                        "description": "Found the Node Profile",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AllNodeProfileData"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error getting the node profile details."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "node-profile-controller"
+                ],
+                "summary": "Update the NodeProfile along with the node list and node filter.",
+                "operationId": "updateNodeProfile",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NodeProfileData"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated the Node Profile",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NodeProfileData"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Node Profile not found"
+                    },
+                    "500": {
+                        "description": "Error updating the Node Profile"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "node-profile-controller"
+                ],
+                "summary": "Create a new node profile. Node List and node filter is optional at the time of creation.",
+                "operationId": "createNodeProfile",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NodeProfileData"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Node profile is created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NodeProfileData"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error creating the node profile."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "node-profile-controller"
+                ],
+                "summary": "Delete a Node Profile by its ID. The associated node lists and node filter are also deleted.",
+                "operationId": "deleteNodeProfile",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Node Profile is deleted",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NodeProfileData"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Node Profile not found"
+                    },
+                    "500": {
+                        "description": "Error deleting the node profile"
+                    }
+                }
+            }
+        },
+        "/api/v1/node-profiles/node-lists": {
+            "put": {
+                "tags": [
+                    "node-list-controller"
+                ],
+                "summary": "Update node lists to a node profile",
+                "operationId": "updateNodeListsToProfile",
+                "parameters": [
+                    {
+                        "name": "nodeProfileId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/NodeListData"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Node lists are updated to the profile"
+                    },
+                    "207": {
+                        "description": "Snmp Group or Auth group mismatch occurred for few of the node lists."
+                    },
+                    "500": {
+                        "description": "Error updating the node lists to the node profile."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "node-list-controller"
+                ],
+                "summary": "Add node lists to a node profile",
+                "operationId": "addNodeListsToProfile",
+                "parameters": [
+                    {
+                        "name": "nodeProfileId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/NodeListData"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Node lists are added to the profile"
+                    },
+                    "207": {
+                        "description": "Snmp Group or Auth group mismatch occurred for few of the node lists."
+                    },
+                    "500": {
+                        "description": "Error adding the node lists to the node profile."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "node-list-controller"
+                ],
+                "summary": "Delete node lists by its ID",
+                "operationId": "deleteNodeLists",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "204": {
+                        "description": "Node Lists are deleted",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error deleting the node lists"
+                    }
+                }
+            }
+        },
+        "/api/v1/node-profiles/node-lists/filteredList": {
+            "put": {
+                "tags": [
+                    "node-list-controller"
+                ],
+                "summary": "Get a Paginated Node List by node profile ID",
+                "operationId": "getPaginatedSortedNodeList",
+                "parameters": [
+                    {
+                        "name": "nodeProfileId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "pageNumber",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "sortColumn",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "isAscOrder",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/FilterCriteria"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Found the Node Lists",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NodeListDataPages"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error getting the node lists belonging to the node profile."
+                    }
+                }
+            }
+        },
+        "/api/v1/node-profiles/node-lists/count": {
+            "put": {
+                "tags": [
+                    "node-list-controller"
+                ],
+                "summary": "Get the count of Node List by node profile ID",
+                "operationId": "getNodeListCount",
+                "parameters": [
+                    {
+                        "name": "nodeProfileId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/FilterCriteria"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Node Lists count returned",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FilterCriteria"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error getting the node lists count belonging to the node profile."
+                    }
+                }
+            }
+        },
+        "/api/v1/node-profiles/node-filters": {
+            "get": {
+                "tags": [
+                    "node-filter-controller"
+                ],
+                "summary": "Get Node filters by node profile ID",
+                "operationId": "getNodeFilter",
+                "parameters": [
+                    {
+                        "name": "nodeProfileId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Found the Node filters",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/NodeFilterData"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error getting the node filters belonging to the node profile."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "node-filter-controller"
+                ],
+                "summary": "Update node filters belonging to a node profile",
+                "operationId": "updateNodeFilter",
+                "parameters": [
+                    {
+                        "name": "nodeProfileId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/NodeFilterData"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Node filters are updated to the profile",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/NodeFilterData"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error updating the node filters to the node profile."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "node-filter-controller"
+                ],
+                "summary": "Add node filter to a node profile",
+                "operationId": "addNodeFilter",
+                "parameters": [
+                    {
+                        "name": "nodeProfileId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/NodeFilterData"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Node filters are added to the profile",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/NodeFilterData"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error adding the node filters to the node profile."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "node-filter-controller"
+                ],
+                "summary": "Delete node filters by its ID",
+                "operationId": "deleteNodeFilter",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "204": {
+                        "description": "Node filters are deleted",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error adding the node filters to the node profile."
+                    }
+                }
+            }
+        },
+        "/api/v1/node-profiles/info-and-node-filter": {
+            "put": {
+                "tags": [
+                    "node-profile-controller"
+                ],
+                "summary": "Update the NodeProfile along with node filter only. The node list is not updated.",
+                "operationId": "updateNodeProfileInfoAndNodeFilter",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NodeProfileData"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated the Node Profile",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NodeProfileData"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Node Profile not found"
+                    },
+                    "500": {
+                        "description": "Error updating the Node Profile"
+                    }
+                }
+            }
+        },
+        "/api/v1/networks": {
+            "get": {
+                "tags": [
+                    "network-controller"
+                ],
+                "summary": "Get all Network name and ID.",
+                "operationId": "getAllNetworks",
+                "responses": {
+                    "200": {
+                        "description": "Found the node",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NetworkDataInfo"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error getting the network details"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "network-controller"
+                ],
+                "summary": "Update the Network",
+                "operationId": "updateNetwork",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NetworkDataView"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "500": {
+                        "description": "Error updating the network."
+                    },
+                    "default": {
+                        "description": "default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NetworkApiResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "network-controller"
+                ],
+                "summary": "Create a new network",
+                "operationId": "createNetwork",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NetworkDataView"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "500": {
+                        "description": "Error creating the network."
+                    },
+                    "default": {
+                        "description": "default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NetworkApiResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "network-controller"
+                ],
+                "summary": "Delete a Network by its ID",
+                "operationId": "deleteNetwork",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Network is deleted",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NetworkDataView"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Network not found"
+                    },
+                    "500": {
+                        "description": "Error deleting the network"
+                    }
+                }
+            }
+        },
+        "/api/v1/networks/collectors/validate-collector": {
+            "put": {
+                "tags": [
+                    "collector-controller"
+                ],
+                "summary": "Validate the collector parameter",
+                "operationId": "validateCollector",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CollectorDataView"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Collector Parameters are valid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CollectorData"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Invalid collector parameters"
+                    }
+                }
+            }
+        },
+        "/api/v1/networks/collectors/agents": {
+            "get": {
+                "tags": [
+                    "agent-controller"
+                ],
+                "summary": "Get all agents name and type required for the landing page.",
+                "operationId": "getAllAgents",
+                "responses": {
+                    "200": {
+                        "description": "Agent names and type are found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AllAgentData"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error getting the agent details."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "agent-controller"
+                ],
+                "summary": "Update the Agent",
+                "operationId": "updateAgent",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AgentData"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated the agent",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AgentData"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Agent not found"
+                    },
+                    "500": {
+                        "description": "Error updating the Agent"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "agent-controller"
+                ],
+                "summary": "Add a new agent",
+                "operationId": "addAgent",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AgentData"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Agent is created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AgentData"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error creating the agent."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "agent-controller"
+                ],
+                "summary": "Delete an agent by its ID",
+                "operationId": "deleteAgent",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Agent is deleted",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AgentData"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Agent not found"
+                    },
+                    "500": {
+                        "description": "Error deleting the agent"
+                    }
+                }
+            }
+        },
+        "/api/v1/networks/collectors/agents/invokeAction": {
+            "put": {
+                "tags": [
+                    "agent-controller"
+                ],
+                "summary": "Invoke action like start, stop or restart on agent identified by its ID",
+                "operationId": "invokeAction",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "action",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "START",
+                                "STOP",
+                                "RESTART"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "The agent action is been submitted."
+                    },
+                    "500": {
+                        "description": "Error invoking the agent action"
+                    }
+                }
+            }
+        },
+        "/api/v1/auth-groups": {
+            "get": {
+                "tags": [
+                    "auth-group-controller"
+                ],
+                "summary": "Get all Auth groups",
+                "operationId": "getAllAuthGroups",
+                "responses": {
+                    "200": {
+                        "description": "Found the auth groups",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AuthGroupData"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error getting the auth group details."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "auth-group-controller"
+                ],
+                "summary": "Update the Auth group",
+                "operationId": "updateAuthGroup",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AuthGroupData"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated the auth group",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AuthGroupData"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Auth group not found"
+                    },
+                    "500": {
+                        "description": "Error updating the auth group"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "auth-group-controller"
+                ],
+                "summary": "Create a new auth group",
+                "operationId": "createAuthGroup",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AuthGroupData"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Authgroup is created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AuthGroupData"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error creating the auth group."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "auth-group-controller"
+                ],
+                "summary": "Delete a Auth group by its ID",
+                "operationId": "deleteAuthGroup",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Auth group is deleted",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AuthGroupData"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Auth group not found"
+                    },
+                    "500": {
+                        "description": "Error deleting the auth group."
+                    }
+                }
+            }
+        },
+        "/api/v1/node-profiles/node-lists/import": {
+            "post": {
+                "tags": [
+                    "node-list-controller"
+                ],
+                "summary": "Import node lists to a node profile using the CSV file",
+                "operationId": "importNodeListsToProfile",
+                "parameters": [
+                    {
+                        "name": "nodeProfileId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "csvFile"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "csvFile": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        },
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "csvFile"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "csvFile": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Node lists are added to the profile"
+                    },
+                    "207": {
+                        "description": "Snmp Group or Auth group mismatch occurred for few of the node lists."
+                    },
+                    "400": {
+                        "description": "Invalid CSV file format."
+                    },
+                    "500": {
+                        "description": "Error adding the node lists to the node profile."
+                    }
+                }
+            }
+        },
+        "/api/v1/file-gateway": {
+            "get": {
+                "tags": [
+                    "file-gateway-controller"
+                ],
+                "summary": "Download the file",
+                "operationId": "downloadFile",
+                "parameters": [
+                    {
+                        "name": "fileName",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filePath",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Download a file from storage. If bucket name and path is not mentioned, the file will be searched under user uploaded folder.",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string",
+                                    "format": "binary"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error downloading the file"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "file-gateway-controller"
+                ],
+                "summary": "Upload a file",
+                "operationId": "uploadFile",
+                "parameters": [
+                    {
+                        "name": "filePath",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "file"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "fileName": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
+                        "text/plain": {
+                            "schema": {
+                                "required": [
+                                    "file"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "fileName": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Upload a file from file system",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error uploading the file"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "file-gateway-controller"
+                ],
+                "summary": "Delete a file",
+                "operationId": "deleteFile",
+                "parameters": [
+                    {
+                        "name": "fileName",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filePath",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Delete a file from storage. If bucket name and path is not mentioned, the file will be searched under user uploaded folder.",
+                        "content": {
+                            "text/plain": {}
+                        }
+                    },
+                    "500": {
+                        "description": "Error deleting the file"
+                    }
+                }
+            }
+        },
+        "/api/v1/configurations": {
+            "get": {
+                "tags": [
+                    "configuration-controller"
+                ],
+                "summary": "Export the configurations",
+                "operationId": "exportConfig",
+                "responses": {
+                    "200": {
+                        "description": "Configurations exported successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AllConfigurations"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error exporting the configurations."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "configuration-controller"
+                ],
+                "summary": "Import the configurations",
+                "operationId": "importConfig",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AllConfigurations"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Configurations imported successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AllConfigurations"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error importing the configurations."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "configuration-controller"
+                ],
+                "summary": "Clear the collector configurations",
+                "operationId": "deleteConfig",
+                "responses": {
+                    "204": {
+                        "description": "All configurations are deleted",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseMessage"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error deleting the configurations."
+                    }
+                }
+            }
+        },
+        "/api/v1/configurations/import/wae": {
+            "post": {
+                "tags": [
+                    "configuration-controller"
+                ],
+                "summary": "Import the configurations from WAE",
+                "operationId": "importFromWae",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "file"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Below Configurations are imported successfully : Auth groups,SNMP groups,network access,node filter configurations,agent configurations, network configurations part of the composer workflow, schedulers configurations and the Archive configurations",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseMessage"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error importing the configurations."
+                    }
+                }
+            }
+        },
+        "/api/v1/snmp-groups/{id}": {
+            "get": {
+                "tags": [
+                    "snmp-group-controller"
+                ],
+                "summary": "Get a snmp group by its ID",
+                "operationId": "getSnmpGroup",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Found the snmp group",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SnmpGroupData"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Snmp group not found"
+                    },
+                    "500": {
+                        "description": "Error getting the snmp group."
+                    }
+                }
+            }
+        },
+        "/api/v1/schedulers/{id}": {
+            "get": {
+                "tags": [
+                    "scheduler-controller"
+                ],
+                "summary": "Get the scheduler config given the Id.",
+                "operationId": "getScheduler",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Found the scheduler",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SchedulerConfigData"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Scheduler is not yet created"
+                    },
+                    "500": {
+                        "description": "Error getting the scheduler details."
+                    }
+                }
+            }
+        },
+        "/api/v1/schedulers/task-history": {
+            "get": {
+                "tags": [
+                    "scheduler-controller"
+                ],
+                "summary": "Get the status history of all the tasks under the Job.",
+                "operationId": "getTaskHistory",
+                "parameters": [
+                    {
+                        "name": "schedulerId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Found the tasks' history for the scheduler",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JobTaskHistory"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Scheduler is not yet created"
+                    },
+                    "500": {
+                        "description": "Error getting the task history of the scheduler."
+                    }
+                }
+            }
+        },
+        "/api/v1/node-profiles/{id}": {
+            "get": {
+                "tags": [
+                    "node-profile-controller"
+                ],
+                "summary": "Get the given NodeProfile details including all its node lists and node filter by its ID",
+                "operationId": "getNodeProfileById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Found the Node Profile",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NodeProfileData"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Node Profile not found"
+                    },
+                    "500": {
+                        "description": "Error getting the node profile."
+                    }
+                }
+            }
+        },
+        "/api/v1/node-profiles/info": {
+            "get": {
+                "tags": [
+                    "node-profile-controller"
+                ],
+                "summary": "Get the basic NodeProfile details  by its ID. This does not include the node lists and node filter associated with node profile.",
+                "operationId": "getNodeProfileInfoById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Found the Node Profile",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NodeProfileData"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Node Profile not found"
+                    },
+                    "500": {
+                        "description": "Error getting the node profile info."
+                    }
+                }
+            }
+        },
+        "/api/v1/networks/{id}": {
+            "get": {
+                "tags": [
+                    "network-controller"
+                ],
+                "summary": "Get a Network by its ID",
+                "operationId": "getNetwork",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Found the network",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NetworkDataView"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Network not found"
+                    },
+                    "500": {
+                        "description": "Error getting the network."
+                    }
+                }
+            }
+        },
+        "/api/v1/networks/network-status": {
+            "get": {
+                "tags": [
+                    "network-controller"
+                ],
+                "summary": "Get all the networks along with its status required for Dashboard landing page.",
+                "operationId": "getNetworkStatus",
+                "responses": {
+                    "200": {
+                        "description": "Found the status of the network",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/NetworkDataInfo"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error getting the network status"
+                    }
+                }
+            }
+        },
+        "/api/v1/networks/collectors": {
+            "get": {
+                "tags": [
+                    "collector-controller"
+                ],
+                "summary": "Get a collector by its ID",
+                "operationId": "getCollector",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Found the collector",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CollectorData"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Collector not found"
+                    },
+                    "500": {
+                        "description": "Error getting the collector details."
+                    }
+                }
+            }
+        },
+        "/api/v1/networks/collectors/type": {
+            "get": {
+                "tags": [
+                    "collector-controller"
+                ],
+                "summary": "Get all collector types",
+                "operationId": "getAllCollectorTypes",
+                "responses": {
+                    "200": {
+                        "description": "Return all Collector Types",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TOPO_IGP",
+                                        "TOPO_BGPLS_XTC",
+                                        "TOPO_BGP",
+                                        "LSP_SNMP",
+                                        "LSP_PCEP_XTC",
+                                        "CONFIG_PARSE",
+                                        "TOPO_VPN",
+                                        "TRAFFIC_POLL",
+                                        "INVENTORY",
+                                        "TRAFFIC_DEMAND",
+                                        "LOGIN_FIND_MULTICAST",
+                                        "LOGIN_POLL_MULTICAST",
+                                        "SNMP_FIND_MULTICAST",
+                                        "SNMP_POLL_MULTICAST",
+                                        "NETFLOW",
+                                        "LAYOUT",
+                                        "EXTERNAL_SCRIPT",
+                                        "DARE",
+                                        "MULTICAST",
+                                        "DEMAND_MESH_CREATOR",
+                                        "DEMAND_FOR_LSPS",
+                                        "DEMAND_FOR_P2MP_LSPS",
+                                        "DEMAND_DEDUCTION",
+                                        "COPY_DEMANDS"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Collector types not found"
+                    },
+                    "500": {
+                        "description": "Error getting the collector types"
+                    }
+                }
+            }
+        },
+        "/api/v1/networks/collectors/default-parameters": {
+            "get": {
+                "tags": [
+                    "collector-controller"
+                ],
+                "summary": "Get the default collector configuration parameters",
+                "operationId": "getDefaultCollectorParameters",
+                "parameters": [
+                    {
+                        "name": "collectorType",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "TOPO_IGP",
+                                "TOPO_BGPLS_XTC",
+                                "TOPO_BGP",
+                                "LSP_SNMP",
+                                "LSP_PCEP_XTC",
+                                "CONFIG_PARSE",
+                                "TOPO_VPN",
+                                "TRAFFIC_POLL",
+                                "INVENTORY",
+                                "TRAFFIC_DEMAND",
+                                "LOGIN_FIND_MULTICAST",
+                                "LOGIN_POLL_MULTICAST",
+                                "SNMP_FIND_MULTICAST",
+                                "SNMP_POLL_MULTICAST",
+                                "NETFLOW",
+                                "LAYOUT",
+                                "EXTERNAL_SCRIPT",
+                                "DARE",
+                                "MULTICAST",
+                                "DEMAND_MESH_CREATOR",
+                                "DEMAND_FOR_LSPS",
+                                "DEMAND_FOR_P2MP_LSPS",
+                                "DEMAND_DEDUCTION",
+                                "COPY_DEMANDS"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Return the default collector parameters.",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error getting the collector parameters"
+                    }
+                }
+            }
+        },
+        "/api/v1/networks/collectors/agents/{id}": {
+            "get": {
+                "tags": [
+                    "agent-controller"
+                ],
+                "summary": "Get agent configuration value by its ID",
+                "operationId": "getAgent",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Found the agent",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AgentData"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Agent not found"
+                    },
+                    "500": {
+                        "description": "Error getting the agent details."
+                    }
+                }
+            }
+        },
+        "/api/v1/networks/collectors/agents/status": {
+            "get": {
+                "tags": [
+                    "agent-controller"
+                ],
+                "summary": "Get all agents status.",
+                "operationId": "getAllAgentStatus",
+                "responses": {
+                    "200": {
+                        "description": "Agent names and type are found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AllAgentData"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error getting the agent status details."
+                    }
+                }
+            }
+        },
+        "/api/v1/networks/collectors/agents/status/{id}": {
+            "get": {
+                "tags": [
+                    "agent-controller"
+                ],
+                "summary": "Get status of the agent identified by its ID",
+                "operationId": "getStatus",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The agent status is successfully retrieved.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AgentData"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Agent not found."
+                    },
+                    "500": {
+                        "description": "Error getting the agent status"
+                    }
+                }
+            }
+        },
+        "/api/v1/networks/collectors/agents/defaultParameters": {
+            "get": {
+                "tags": [
+                    "agent-controller"
+                ],
+                "summary": "Get agent dynamic form using type along with the configured value using ID",
+                "operationId": "getAgentDefaultParams",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "SR_PCE_AGENT",
+                                "NETFLOW_AGENT",
+                                "TRAFFIC_POLLER"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Agent default parameters obtained successfully."
+                    },
+                    "404": {
+                        "description": "Agent Type not found"
+                    },
+                    "500": {
+                        "description": "Error getting the agent default parameters."
+                    }
+                }
+            }
+        },
+        "/api/v1/file-gateway/plan-file": {
+            "get": {
+                "tags": [
+                    "file-gateway-controller"
+                ],
+                "summary": "Download the plan file",
+                "operationId": "downloadPlanFile",
+                "parameters": [
+                    {
+                        "name": "networkId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "collectorId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "collectorType",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "TOPO_IGP",
+                                "TOPO_BGPLS_XTC",
+                                "TOPO_BGP",
+                                "LSP_SNMP",
+                                "LSP_PCEP_XTC",
+                                "CONFIG_PARSE",
+                                "TOPO_VPN",
+                                "TRAFFIC_POLL",
+                                "INVENTORY",
+                                "TRAFFIC_DEMAND",
+                                "LOGIN_FIND_MULTICAST",
+                                "LOGIN_POLL_MULTICAST",
+                                "SNMP_FIND_MULTICAST",
+                                "SNMP_POLL_MULTICAST",
+                                "NETFLOW",
+                                "LAYOUT",
+                                "EXTERNAL_SCRIPT",
+                                "DARE",
+                                "MULTICAST",
+                                "DEMAND_MESH_CREATOR",
+                                "DEMAND_FOR_LSPS",
+                                "DEMAND_FOR_P2MP_LSPS",
+                                "DEMAND_DEDUCTION",
+                                "COPY_DEMANDS"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Download a plan-file from storage. ",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string",
+                                    "format": "binary"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error downloading the plan file"
+                    }
+                }
+            }
+        },
+        "/api/v1/auth-groups/{id}": {
+            "get": {
+                "tags": [
+                    "auth-group-controller"
+                ],
+                "summary": "Get a Auth group by its ID",
+                "operationId": "getAuthGroup",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Found the auth group",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AuthGroupData"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Auth group not found"
+                    },
+                    "500": {
+                        "description": "Error getting the auth group details."
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "SnmpGroupData": {
+                "required": [
+                    "name",
+                    "snmpType"
+                ],
+                "type": "object",
+                "properties": {
+                    "snmpType": {
+                        "type": "string",
+                        "enum": [
+                            "SNMPv2c",
+                            "SNMPv3"
+                        ]
+                    },
+                    "securityLevel": {
+                        "type": "string",
+                        "enum": [
+                            "AUTH_PRIV",
+                            "NOAUTH_PRIV",
+                            "NOAUTH_NOPRIV"
+                        ]
+                    },
+                    "username": {
+                        "type": "string"
+                    },
+                    "authenticationProtocol": {
+                        "type": "string",
+                        "enum": [
+                            "SHA",
+                            "MD5"
+                        ]
+                    },
+                    "authenticationPassword": {
+                        "type": "string"
+                    },
+                    "encryptionProtocol": {
+                        "type": "string",
+                        "enum": [
+                            "AES",
+                            "DES"
+                        ]
+                    },
+                    "encryptionPassword": {
+                        "type": "string"
+                    },
+                    "roCommunity": {
+                        "type": "string"
+                    },
+                    "updateDate": {
+                        "type": "string",
+                        "format": "date",
+                        "readOnly": true
+                    },
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "SchedulerConfigData": {
+                "required": [
+                    "name",
+                    "networkId"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "networkId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "networkName": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "cronExpression": {
+                        "type": "string"
+                    },
+                    "runNow": {
+                        "type": "boolean"
+                    },
+                    "taskConfigDataList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TaskConfigData"
+                        }
+                    },
+                    "active": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "TaskConfigData": {
+                "type": "object",
+                "properties": {
+                    "taskName": {
+                        "type": "string"
+                    },
+                    "collectorId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "collectorName": {
+                        "type": "string"
+                    },
+                    "collect": {
+                        "type": "boolean"
+                    },
+                    "aggreagate": {
+                        "type": "boolean"
+                    },
+                    "archive": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "ApiResponseDetail": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "TOPO_IGP",
+                            "TOPO_BGPLS_XTC",
+                            "TOPO_BGP",
+                            "LSP_SNMP",
+                            "LSP_PCEP_XTC",
+                            "CONFIG_PARSE",
+                            "TOPO_VPN",
+                            "TRAFFIC_POLL",
+                            "INVENTORY",
+                            "TRAFFIC_DEMAND",
+                            "LOGIN_FIND_MULTICAST",
+                            "LOGIN_POLL_MULTICAST",
+                            "SNMP_FIND_MULTICAST",
+                            "SNMP_POLL_MULTICAST",
+                            "NETFLOW",
+                            "LAYOUT",
+                            "EXTERNAL_SCRIPT",
+                            "DARE",
+                            "MULTICAST",
+                            "DEMAND_MESH_CREATOR",
+                            "DEMAND_FOR_LSPS",
+                            "DEMAND_FOR_P2MP_LSPS",
+                            "DEMAND_DEDUCTION",
+                            "COPY_DEMANDS"
+                        ]
+                    },
+                    "status": {
+                        "type": "boolean"
+                    },
+                    "errorMessage": {
+                        "type": "string"
+                    },
+                    "errorDetails": {
+                        "type": "string"
+                    }
+                }
+            },
+            "NodeFilterData": {
+                "required": [
+                    "condition",
+                    "type",
+                    "value"
+                ],
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "HOST_INDIVIDUAL",
+                            "HOST_REGEX",
+                            "IP_CIDR",
+                            "IP_REGEX",
+                            "IP_INDIVIDUAL"
+                        ]
+                    },
+                    "value": {
+                        "type": "string"
+                    },
+                    "condition": {
+                        "type": "string",
+                        "enum": [
+                            "INCLUDE",
+                            "EXCLUDE"
+                        ]
+                    },
+                    "enabled": {
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }
+            },
+            "NodeListData": {
+                "required": [
+                    "nodeIp"
+                ],
+                "type": "object",
+                "properties": {
+                    "nodeIp": {
+                        "type": "string"
+                    },
+                    "nodeManagementIp": {
+                        "type": "string"
+                    },
+                    "authGroupName": {
+                        "type": "string"
+                    },
+                    "snmpGroupName": {
+                        "type": "string"
+                    },
+                    "snmpGroupMismatch": {
+                        "type": "boolean",
+                        "readOnly": true
+                    },
+                    "authGroupMismatch": {
+                        "type": "boolean",
+                        "readOnly": true
+                    },
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }
+            },
+            "NodeProfileData": {
+                "required": [
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "updateDate": {
+                        "type": "string",
+                        "format": "date",
+                        "readOnly": true
+                    },
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "defaultAuthGroup": {
+                        "type": "string"
+                    },
+                    "defaultSnmpGroup": {
+                        "type": "string"
+                    },
+                    "useNodeListAsIncludeFilter": {
+                        "type": "boolean"
+                    },
+                    "nodeList": {
+                        "uniqueItems": true,
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/NodeListData"
+                        }
+                    },
+                    "nodeFilter": {
+                        "uniqueItems": true,
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/NodeFilterData"
+                        }
+                    }
+                }
+            },
+            "FilterCriteria": {
+                "type": "object",
+                "properties": {
+                    "columnName": {
+                        "type": "string"
+                    },
+                    "columnValue": {
+                        "type": "string"
+                    }
+                }
+            },
+            "NodeListDataPages": {
+                "type": "object",
+                "properties": {
+                    "count": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "nodeLists": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/NodeListData"
+                        }
+                    }
+                }
+            },
+            "AgentStatus": {
+                "type": "object",
+                "properties": {
+                    "startTime": {
+                        "type": "string"
+                    },
+                    "upTime": {
+                        "type": "string"
+                    },
+                    "lastHbReceived": {
+                        "type": "string"
+                    },
+                    "lastHbAge": {
+                        "type": "string"
+                    },
+                    "skewTime": {
+                        "type": "string"
+                    },
+                    "computationSequence": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "computationModel": {
+                        "type": "string"
+                    },
+                    "computingIas": {
+                        "type": "boolean"
+                    },
+                    "jvmMemUtilitzation": {
+                        "type": "string"
+                    },
+                    "daemonperiod": {
+                        "type": "string"
+                    },
+                    "daemonStatus": {
+                        "type": "string"
+                    },
+                    "bgpPort": {
+                        "type": "string"
+                    },
+                    "bgpPortStatus": {
+                        "type": "string"
+                    },
+                    "netflowPort": {
+                        "type": "string"
+                    },
+                    "netflowPortStatus": {
+                        "type": "string"
+                    },
+                    "netflowDroppedPackets": {
+                        "type": "string"
+                    },
+                    "netflowTrafficTotal": {
+                        "type": "string"
+                    },
+                    "netflowTrafficPerSource": {
+                        "type": "string"
+                    }
+                }
+            },
+            "AllAgentData": {
+                "required": [
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "updateDate": {
+                        "type": "string",
+                        "format": "date",
+                        "readOnly": true
+                    },
+                    "srPceDetailStatus": {
+                        "$ref": "#/components/schemas/XtcAgentStatusDto"
+                    },
+                    "topoConnectionStatus": {
+                        "type": "string",
+                        "readOnly": true,
+                        "enum": [
+                            "closed",
+                            "connecting",
+                            "connected",
+                            "not_connected"
+                        ]
+                    },
+                    "lspConnectionStatus": {
+                        "type": "string",
+                        "readOnly": true,
+                        "enum": [
+                            "closed",
+                            "connecting",
+                            "connected",
+                            "not_connected"
+                        ]
+                    },
+                    "netflowDetailStatus": {
+                        "$ref": "#/components/schemas/NetflowClusterStatus"
+                    },
+                    "netflowStatus": {
+                        "type": "boolean",
+                        "readOnly": true
+                    },
+                    "trafficPollerStatus": {
+                        "$ref": "#/components/schemas/CPStatusResponse"
+                    },
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "SR_PCE_AGENT",
+                            "NETFLOW_AGENT",
+                            "TRAFFIC_POLLER"
+                        ]
+                    }
+                }
+            },
+            "AllNodeProfileData": {
+                "type": "object",
+                "properties": {
+                    "updateDate": {
+                        "type": "string",
+                        "format": "date",
+                        "readOnly": true
+                    },
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "useNodeListAsIncludeFilter": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "CPStatusResponse": {
+                "type": "object",
+                "properties": {
+                    "started": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "ClusterSummary": {
+                "type": "object",
+                "properties": {
+                    "configuredSize": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "agentsUp": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "daemonsUp": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "computationMode": {
+                        "type": "string"
+                    },
+                    "lastResultTime": {
+                        "type": "object"
+                    },
+                    "lastNoResultTime": {
+                        "type": "object"
+                    },
+                    "lastComputationDone": {
+                        "type": "object"
+                    },
+                    "maxDiffTime": {
+                        "type": "object"
+                    },
+                    "maxDiffTimeOk": {
+                        "type": "object"
+                    },
+                    "clusterAllOk": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "CollectionDataStatusDto": {
+                "type": "object",
+                "properties": {
+                    "dataCollectionStatus": {
+                        "type": "string",
+                        "enum": [
+                            "processing_data",
+                            "valid_data",
+                            "invalid_data"
+                        ]
+                    },
+                    "lastFullCollectionTime": {
+                        "type": "string"
+                    },
+                    "lastNotificationTime": {
+                        "type": "string"
+                    },
+                    "lastCollectionId": {
+                        "type": "string"
+                    },
+                    "eventsCount": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "dataReceived": {
+                        "type": "string"
+                    },
+                    "bufferingEvents": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "CollectionWorkerDto": {
+                "type": "object",
+                "properties": {
+                    "workerType": {
+                        "type": "string",
+                        "enum": [
+                            "LSP",
+                            "TOPOLOGY"
+                        ]
+                    },
+                    "workerStatus": {
+                        "$ref": "#/components/schemas/CollectionWorkerStatusDto"
+                    }
+                }
+            },
+            "CollectionWorkerStatusDto": {
+                "type": "object",
+                "properties": {
+                    "connectionStatus": {
+                        "type": "string",
+                        "enum": [
+                            "closed",
+                            "connecting",
+                            "connected",
+                            "not_connected"
+                        ]
+                    },
+                    "dataStatus": {
+                        "$ref": "#/components/schemas/CollectionDataStatusDto"
+                    }
+                }
+            },
+            "CollectorDataView": {
+                "required": [
+                    "name",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "TOPO_IGP",
+                            "TOPO_BGPLS_XTC",
+                            "TOPO_BGP",
+                            "LSP_SNMP",
+                            "LSP_PCEP_XTC",
+                            "CONFIG_PARSE",
+                            "TOPO_VPN",
+                            "TRAFFIC_POLL",
+                            "INVENTORY",
+                            "TRAFFIC_DEMAND",
+                            "LOGIN_FIND_MULTICAST",
+                            "LOGIN_POLL_MULTICAST",
+                            "SNMP_FIND_MULTICAST",
+                            "SNMP_POLL_MULTICAST",
+                            "NETFLOW",
+                            "LAYOUT",
+                            "EXTERNAL_SCRIPT",
+                            "DARE",
+                            "MULTICAST",
+                            "DEMAND_MESH_CREATOR",
+                            "DEMAND_FOR_LSPS",
+                            "DEMAND_FOR_P2MP_LSPS",
+                            "DEMAND_DEDUCTION",
+                            "COPY_DEMANDS"
+                        ]
+                    },
+                    "consolidationType": {
+                        "type": "string",
+                        "enum": [
+                            "DARE",
+                            "SAGE",
+                            "NONE"
+                        ]
+                    },
+                    "params": {
+                        "type": "string"
+                    },
+                    "sourceCollector": {
+                        "$ref": "#/components/schemas/SourceCollector"
+                    },
+                    "agents": {
+                        "uniqueItems": true,
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AllAgentData"
+                        }
+                    }
+                }
+            },
+            "ControllerStatus": {
+                "type": "object",
+                "properties": {
+                    "startTime": {
+                        "type": "string"
+                    },
+                    "upTime": {
+                        "type": "string"
+                    },
+                    "lastHbReceived": {
+                        "type": "string"
+                    },
+                    "lastHbAge": {
+                        "type": "string"
+                    },
+                    "jvmMemUtilitzation": {
+                        "type": "string"
+                    }
+                }
+            },
+            "NetflowClusterStatus": {
+                "type": "object",
+                "properties": {
+                    "AgentStatus": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AgentStatus"
+                        }
+                    },
+                    "agents": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AgentStatus"
+                        }
+                    },
+                    "ControllerStatus": {
+                        "$ref": "#/components/schemas/ControllerStatus"
+                    },
+                    "ClusterSummary": {
+                        "$ref": "#/components/schemas/ClusterSummary"
+                    }
+                }
+            },
+            "NetworkDataView": {
+                "required": [
+                    "name",
+                    "nodeProfileData"
+                ],
+                "type": "object",
+                "properties": {
+                    "nodeProfileData": {
+                        "$ref": "#/components/schemas/AllNodeProfileData"
+                    },
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "draft": {
+                        "type": "boolean"
+                    },
+                    "draftConfig": {
+                        "type": "string"
+                    },
+                    "collectors": {
+                        "uniqueItems": true,
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CollectorDataView"
+                        }
+                    }
+                }
+            },
+            "SourceCollector": {
+                "required": [
+                    "id"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "TOPO_IGP",
+                            "TOPO_BGPLS_XTC",
+                            "TOPO_BGP",
+                            "LSP_SNMP",
+                            "LSP_PCEP_XTC",
+                            "CONFIG_PARSE",
+                            "TOPO_VPN",
+                            "TRAFFIC_POLL",
+                            "INVENTORY",
+                            "TRAFFIC_DEMAND",
+                            "LOGIN_FIND_MULTICAST",
+                            "LOGIN_POLL_MULTICAST",
+                            "SNMP_FIND_MULTICAST",
+                            "SNMP_POLL_MULTICAST",
+                            "NETFLOW",
+                            "LAYOUT",
+                            "EXTERNAL_SCRIPT",
+                            "DARE",
+                            "MULTICAST",
+                            "DEMAND_MESH_CREATOR",
+                            "DEMAND_FOR_LSPS",
+                            "DEMAND_FOR_P2MP_LSPS",
+                            "DEMAND_DEDUCTION",
+                            "COPY_DEMANDS"
+                        ]
+                    }
+                }
+            },
+            "XtcAgentStatusDto": {
+                "type": "object",
+                "properties": {
+                    "agentID": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "collectionWorkers": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CollectionWorkerDto"
+                        }
+                    }
+                }
+            },
+            "NetworkApiResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "responseDetails": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ApiResponseDetail"
+                        }
+                    }
+                }
+            },
+            "CollectorData": {
+                "required": [
+                    "name",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "TOPO_IGP",
+                            "TOPO_BGPLS_XTC",
+                            "TOPO_BGP",
+                            "LSP_SNMP",
+                            "LSP_PCEP_XTC",
+                            "CONFIG_PARSE",
+                            "TOPO_VPN",
+                            "TRAFFIC_POLL",
+                            "INVENTORY",
+                            "TRAFFIC_DEMAND",
+                            "LOGIN_FIND_MULTICAST",
+                            "LOGIN_POLL_MULTICAST",
+                            "SNMP_FIND_MULTICAST",
+                            "SNMP_POLL_MULTICAST",
+                            "NETFLOW",
+                            "LAYOUT",
+                            "EXTERNAL_SCRIPT",
+                            "DARE",
+                            "MULTICAST",
+                            "DEMAND_MESH_CREATOR",
+                            "DEMAND_FOR_LSPS",
+                            "DEMAND_FOR_P2MP_LSPS",
+                            "DEMAND_DEDUCTION",
+                            "COPY_DEMANDS"
+                        ]
+                    },
+                    "networkId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "consolidationType": {
+                        "type": "string",
+                        "enum": [
+                            "DARE",
+                            "SAGE",
+                            "NONE"
+                        ]
+                    },
+                    "nodeProfileData": {
+                        "$ref": "#/components/schemas/AllNodeProfileData"
+                    },
+                    "params": {
+                        "type": "string"
+                    },
+                    "planFileName": {
+                        "type": "string"
+                    },
+                    "sourceCollector": {
+                        "$ref": "#/components/schemas/SourceCollector"
+                    },
+                    "agents": {
+                        "uniqueItems": true,
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AllAgentData"
+                        }
+                    },
+                    "nodeFilters": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/NodeFilterData"
+                        }
+                    }
+                }
+            },
+            "AgentData": {
+                "required": [
+                    "name",
+                    "params",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "updateDate": {
+                        "type": "string",
+                        "format": "date",
+                        "readOnly": true
+                    },
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "SR_PCE_AGENT",
+                            "NETFLOW_AGENT",
+                            "TRAFFIC_POLLER"
+                        ]
+                    },
+                    "params": {
+                        "type": "string"
+                    }
+                }
+            },
+            "AuthGroupData": {
+                "required": [
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "updateDate": {
+                        "type": "string",
+                        "format": "date",
+                        "readOnly": true
+                    },
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "loginType": {
+                        "type": "string",
+                        "enum": [
+                            "TELNET",
+                            "SSH"
+                        ]
+                    },
+                    "username": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "confirmPassword": {
+                        "type": "string"
+                    }
+                }
+            },
+            "AllConfigurations": {
+                "type": "object",
+                "properties": {
+                    "snmpGroupDataList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SnmpGroupData"
+                        }
+                    },
+                    "authGroupDataList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuthGroupData"
+                        }
+                    },
+                    "nodeProfileDataList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/NodeProfileData"
+                        }
+                    },
+                    "agentDataList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AgentData"
+                        }
+                    },
+                    "networkDataList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/NetworkDataView"
+                        }
+                    },
+                    "schedulerConfigDataList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SchedulerConfigData"
+                        }
+                    }
+                }
+            },
+            "ResponseMessage": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "boolean"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "ExecutionInfo": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "SCHEDULED",
+                            "RUNNING",
+                            "FINISHED",
+                            "FAILED",
+                            "WAITING",
+                            "ABORTED",
+                            "TIMEOUT"
+                        ]
+                    },
+                    "statusInfo": {
+                        "type": "string"
+                    },
+                    "startTime": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "endTime": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }
+            },
+            "JobTaskHistory": {
+                "type": "object",
+                "properties": {
+                    "jobId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "tasks": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/TaskHistory"
+                        }
+                    }
+                }
+            },
+            "TaskHistory": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "history": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ExecutionInfo"
+                        }
+                    }
+                }
+            },
+            "JobExecutionStatus": {
+                "type": "object",
+                "properties": {
+                    "executionId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "SCHEDULED",
+                            "RUNNING",
+                            "FINISHED",
+                            "FAILED",
+                            "WAITING",
+                            "ABORTED",
+                            "TIMEOUT"
+                        ]
+                    },
+                    "startTime": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "endTime": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "taskExecutionStats": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    "tasks": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TaskStatus"
+                        }
+                    }
+                }
+            },
+            "JobStatus": {
+                "type": "object",
+                "properties": {
+                    "jobId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "networkId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "scheduleInfo": {
+                        "$ref": "#/components/schemas/ScheduleInfo"
+                    },
+                    "scheduleStatus": {
+                        "type": "string",
+                        "enum": [
+                            "Active",
+                            "Disabled"
+                        ]
+                    },
+                    "nextExecutionTime": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "lastExecution": {
+                        "$ref": "#/components/schemas/JobExecutionStatus"
+                    }
+                }
+            },
+            "NetworkDataInfo": {
+                "required": [
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "draft": {
+                        "type": "boolean"
+                    },
+                    "nodeProfile": {
+                        "type": "string"
+                    },
+                    "nodeProfileId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "networkStatus": {
+                        "$ref": "#/components/schemas/NetworkStatus"
+                    }
+                }
+            },
+            "NetworkStatus": {
+                "type": "object",
+                "properties": {
+                    "networkId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "lastExecution": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "lastSuccessfulExecution": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "jobStatusList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/JobStatus"
+                        }
+                    },
+                    "jobExecutionStats": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                }
+            },
+            "ScheduleInfo": {
+                "type": "object",
+                "properties": {
+                    "recurrenceType": {
+                        "type": "string",
+                        "enum": [
+                            "RUN_NOW",
+                            "CRON_EXPR"
+                        ]
+                    },
+                    "cronExpr": {
+                        "type": "string"
+                    }
+                }
+            },
+            "TaskStatus": {
+                "type": "object",
+                "properties": {
+                    "taskId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "collectorId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "SCHEDULED",
+                            "RUNNING",
+                            "FINISHED",
+                            "FAILED",
+                            "WAITING",
+                            "ABORTED",
+                            "TIMEOUT"
+                        ]
+                    },
+                    "statusInfo": {
+                        "type": "string"
+                    },
+                    "startTime": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "endTime": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }
+            }
+        }
+    }
+}
