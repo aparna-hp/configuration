@@ -1,0 +1,119 @@
+plugins {
+	id 'org.springframework.boot' version '3.1.1'
+	id 'io.spring.dependency-management' version '1.1.0'
+	id 'java'
+	id "io.freefair.lombok" version "8.1.0"
+	id 'jacoco'
+}
+
+group = 'com.cisco.cwplanning'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenLocal()
+	maven {
+		url "https://engci-maven.cisco.com/artifactory/wae-group"
+		credentials {
+			//username "${USER_NAME}"
+			//password "${PWD}"
+		}
+	}
+	maven {url "https://engci-maven-master.cisco.com/artifactory/robot-dev-release"}
+	maven {url "https://engci-maven.cisco.com/artifactory/maven-proxy"}
+	maven { url "https://plugins.gradle.org/m2/" }
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	testImplementation group: 'com.h2database', name: 'h2', version: '1.3.148'
+
+
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.4'
+
+	implementation 'org.postgresql:postgresql'
+	implementation group: 'commons-validator', name: 'commons-validator', version: '1.4.0'
+
+	implementation(group: 'com.cisco.cwplanning', name: 'wae-collector-models', version: '1.0.0.88')
+	implementation(group: 'com.cisco.cwplanning', name: 'cwp-infra-utils', version: '1.0.0.13')
+
+	implementation (group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api')
+	implementation (group: 'org.glassfish.jaxb',name:'jaxb-runtime')
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+
+	implementation 'com.cisco.robot:skeleton:6.0.0.42'
+	implementation 'com.cisco.sp.cw:cw-utils:1.0.45'
+	implementation 'com.cisco.robot:ssl-context-helper:6.0.0.42'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+test {
+	useJUnitPlatform() {
+		testLogging.showStandardStreams = true
+	}
+	finalizedBy jacocoTestReport // report is always generated after tests run
+}
+
+jacocoTestReport {
+	dependsOn test // tests are required to run before generating the report
+	afterEvaluate {
+		classDirectories.setFrom(files(classDirectories.files.collect {
+			fileTree(dir: it,
+					exclude: ['com/cisco/configService/library/**',
+							  'com/cisco/configService/config/**'])
+		}))
+	}
+}
+
+jacoco {
+	toolVersion = "0.8.8"
+}
+
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+
+tasks.withType(Test) {
+	testLogging {
+		// set options for log level LIFECYCLE
+		events TestLogEvent.FAILED,
+				TestLogEvent.PASSED,
+				TestLogEvent.SKIPPED,
+				TestLogEvent.STANDARD_OUT
+		exceptionFormat TestExceptionFormat.FULL
+		showExceptions true
+		showCauses true
+		showStackTraces true
+
+		// set options for log level DEBUG and INFO
+		debug {
+			events TestLogEvent.STARTED,
+					TestLogEvent.FAILED,
+					TestLogEvent.PASSED,
+					TestLogEvent.SKIPPED,
+					TestLogEvent.STANDARD_ERROR,
+					TestLogEvent.STANDARD_OUT
+			exceptionFormat TestExceptionFormat.FULL
+		}
+		info.events = debug.events
+		info.exceptionFormat = debug.exceptionFormat
+
+		afterSuite { desc, result ->
+			if (!desc.parent) { // will match the outermost suite
+				def output = "Results: ${result.resultType} (${result.testCount} tests, ${result.successfulTestCount} successes, ${result.failedTestCount} failures, ${result.skippedTestCount} skipped)"
+				def startItem = '|  ', endItem = '  |'
+				def repeatLength = startItem.length() + output.length() + endItem.length()
+				println('\n' + ('-' * repeatLength) + '\n' + startItem + output + endItem + '\n' + ('-' * repeatLength))
+			}
+		}
+	}
+}
